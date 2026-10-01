@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "Морковка по корейски",
+    "price": "290 ₽",
+    "oldPrice": "340 ₽",
+    "weight": "500 г",
+    "badge": "ХИТ",
+    "image": "/products/carrot.JPG"
+  },
+  {
+    "id": 2,
+    "title": "Капуста пикантная",
+    "price": "310 ₽",
+    "oldPrice": "",
+    "weight": "680 г",
+    "badge": "NEW",
+    "image": "/products/spicy_cabbage.JPG"
+  },
+  {
+    "id": 3,
+    "title": "Капуста квашенная с грибами",
+    "price": "240 ₽",
+    "oldPrice": "280 ₽",
+    "weight": "450 г",
+    "badge": "-15%",
+    "image": "/products/cabbage_with_mushrooms.JPG"
+  },
+  {
+    "id": 4,
+    "title": "Пелюстка квашенная острая",
+    "price": "420 ₽",
+    "oldPrice": "",
+    "weight": "350 г",
+    "badge": "ХИТ",
+    "image": "/products/spicy spicy.JPG"
+  },
+  {
+    "id": 5,
+    "title": "Капуста квашенная с яблоками",
+    "price": "280 ₽",
+    "oldPrice": "",
+    "weight": "500 г",
+    "badge": "",
+    "image": "/products/cabbage_with_apples.JPG"
+  },
+  {
+    "id": 6,
+    "title": "Аджика острая",
+    "price": "260 ₽",
+    "oldPrice": "",
+    "weight": "300 г",
+    "badge": "",
+    "image": "/products/hot_adjika.JPG"
+  },
+  {
+    "id": 7,
+    "title": "Пелюстка квашенная острая",
+    "price": "230 ₽",
+    "oldPrice": "260 ₽",
+    "weight": "480 г",
+    "badge": "АКЦИЯ",
+    "image": "/products/beetroot_petal.JPG"
+  },
+  {
+    "id": 8,
+    "title": "Кобра острая",
+    "price": "390 ₽",
+    "oldPrice": "",
+    "weight": "370 г",
+    "badge": "NEW",
+    "image": "/products/cobra1.JPG"
+  },
+  {
+    "id": 9,
+    "title": "Капуста квашенная с клюквой",
+    "price": "340 ₽",
+    "oldPrice": "",
+    "weight": "720 г",
+    "badge": "",
+    "image": "/products/cabbage_with_cranberries.JPG"
+  },
+  {
+    "id": 10,
+    "title": "Капуста острая",
+    "price": "270 ₽",
+    "oldPrice": "",
+    "weight": "330 г",
+    "badge": "ОСТРОЕ",
+    "image": "/products/spicy.JPG"
+  },
+  {
+    "id": 11,
+    "title": "огурцы соленые",
+    "price": "320 ₽",
+    "oldPrice": "",
+    "weight": "600 г",
+    "badge": "",
+    "image": "/products/apple.png"
+  },
+  {
+    "id": 12,
+    "title": "Баклажаны пикантные с зеленью",
+    "price": "350 ₽",
+    "oldPrice": "400 ₽",
+    "weight": "500 г",
+    "badge": "-12%",
+    "image": "/products/eggplant.png"
+  }
+]
