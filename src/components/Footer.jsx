@@ -5,34 +5,30 @@ export default function Footer() {
   return (
     <footer id="contacts" className="site-footer">
       <div className="footer-container">
-        {/* Основная сетка: Контакты + Карта */}
+        {/* Основная сетка: Левая колонка (Заголовок + Контакты) + Карта */}
         <div className="footer-main-content">
-          {/* Блок контактов */}
-          <div className="footer-contacts-info">
+          {/* Левая колонка: объединены заголовок и контакты, чтобы встать вровень с картой */}
+          <div className="footer-left-column">
             <h3 className="footer-title">Где мы находимся</h3>
-            
-            <ul className="contacts-list">
-              <li>
-                <MapPin size={18} className="contact-icon" />
-                <span>ТОО "LVR Asia", г. Алматы</span>
-              </li>
-              <li>
-                <Phone size={18} className="contact-icon" />
-                <a href="tel:+77000000000">+7 (707) 990-39-60</a>
-              </li>
-              <li>
-                <Mail size={18} className="contact-icon" />
-                <a href="mailto:info@solenych.kz">info@solenich.kz</a>
-              </li>
-              <li>
-                <Clock size={18} className="contact-icon" />
-                <span>Пн–Пт: 09:00 – 17:00, Сб-Вс: Выходной</span>
-              </li>
-            </ul>
-
-            <div className="footer-left-links">
-              <a href="#payment">Оплата</a>
-              <a href="#faq">FAQ</a>
+            <div className="footer-contacts-info">
+              <ul className="contacts-list">
+                <li>
+                  <MapPin size={18} className="contact-icon" />
+                  <span>ТОО "LVR Asia", г. Алматы</span>
+                </li>
+                <li>
+                  <Phone size={18} className="contact-icon" />
+                  <a href="tel:+77079903960">+7 (707) 990-39-60</a>
+                </li>
+                <li>
+                  <Mail size={18} className="contact-icon" />
+                  <a href="mailto:info@solenych.kz">info@solenych.kz</a>
+                </li>
+                <li>
+                  <Clock size={18} className="contact-icon" />
+                  <span>Пн–Пт: 09:00 – 17:00, Сб-Вс: Выходной</span>
+                </li>
+              </ul>
             </div>
           </div>
 

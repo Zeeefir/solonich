@@ -5,8 +5,6 @@ import { ChevronLeft, ChevronRight, Leaf, Award, Apple, Store, ShieldCheck } fro
 export default function HomePage() {
   const partners = [
     'МАГНУМ',
-    'METRO',
-    'РАМСТОР',
     'INTERFOOD',
     'SMALL'
   ];

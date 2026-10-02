@@ -4,8 +4,6 @@ import { Leaf, Award, Truck, Users, Store } from 'lucide-react';
 export default function AboutPage() {
   const partners = [
     'МАГНУМ',
-    'METRO',
-    'РАМСТОР',
     'INTERFOOD',
     'SMALL'
   ];
