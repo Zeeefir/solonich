@@ -1,11 +1,35 @@
 import { Link } from 'react-router-dom';
 
 export default function ProductCard({ product }) {
+  // Функция для выбора цвета плашки в зависимости от текста
+  const getBadgeStyle = (text) => {
+    switch (text?.toUpperCase()) {
+      case 'ОСТРОЕ':
+        return { backgroundColor: '#e53935' }; // Красный
+      case 'ХИТ':
+        return { backgroundColor: '#ffa726' }; // Оранжевый / Желтый
+      case 'НОВИНКА':
+        return { backgroundColor: '#43a047' }; // Зеленый
+      case 'АКЦИЯ':
+        return { backgroundColor: '#ab47bc' }; // Фиолетовый
+      default:
+        return { backgroundColor: '#e53935' }; // Цвет по умолчанию (красный)
+    }
+  };
+
   return (
     <div className="product-card-box">
-      {/* Обернули кликабельную часть в Link, чтобы открывалась страница товара */}
+      {/* Плашка с динамическим цветом */}
+      {product.badge && (
+        <span 
+          className="card-badge" 
+          style={getBadgeStyle(product.badge)}
+        >
+          {product.badge}
+        </span>
+      )}
+
       <Link to={`/product/${product.id}`} className="card-link-wrapper" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', flex: 1 }}>
-        {/* Фотография товара */}
         <div className="card-image-wrapper">
           {product.image ? (
             <img 
@@ -18,7 +42,6 @@ export default function ProductCard({ product }) {
           )}
         </div>
 
-        {/* Информация о товаре */}
         <div className="card-content">
           <h3 className="card-item-title">{product.title}</h3>
 
@@ -28,7 +51,6 @@ export default function ProductCard({ product }) {
         </div>
       </Link>
 
-      {/* Кнопка "СОСТАВ" (ведет на страницу товара) */}
       <Link to={`/product/${product.id}`} className="btn-composition">
         СОСТАВ
       </Link>
