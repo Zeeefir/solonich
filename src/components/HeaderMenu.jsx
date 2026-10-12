@@ -1,4 +1,5 @@
 import useLanguage from '../useLanguage';
+import { getActiveSection } from '../activeSection.mjs';
 import { useState, useEffect, useRef } from 'react';
 import { Sparkles, Globe, ChevronDown, Menu, X } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -67,20 +68,22 @@ export default function Header() {
     const sectionIds = ['catalog', 'about', 'advantages', 'contacts'];
     const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (isScrollingToSection.current) return;
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: '-20% 0px -40% 0px', threshold: 0.1 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    let frame = 0;
+    const updateSection = () => {
+      frame = 0;
+      if (isScrollingToSection.current) return;
+      const marker = Math.max(100, window.innerHeight * 0.25);
+      setActiveSection(getActiveSection(sections.map(section => ({ id: section.id, top: section.getBoundingClientRect().top })), marker));
+    };
+    const scheduleUpdate = () => { if (!frame) frame = requestAnimationFrame(updateSection); };
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    scheduleUpdate();
+    return () => {
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
+      if (frame) cancelAnimationFrame(frame);
+    };
   }, [isProductPage, lang]);
 
   useEffect(() => {
