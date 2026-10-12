@@ -65,6 +65,7 @@ export default function Footer() {
             {backendEnabled && <Link to="/profile" className="footer-account-link">{lang === 'EN' ? 'My account' : isRu ? 'Личный кабинет' : 'Жеке кабинет'}</Link>}
           </div>
         </div>
+        <p className="footer-credit">GitHub · <span>Zeeefir</span></p>
       </div>
     </footer>
   );

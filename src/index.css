@@ -1250,6 +1250,19 @@ section, footer {
   opacity: 1;
 }
 
+.footer-credit {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-credit span {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+}
+
 @media (max-width: 600px) {
   .footer-account-link { margin-left: auto; margin-right: auto; }
 }
