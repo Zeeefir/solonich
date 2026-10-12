@@ -1,4 +1,6 @@
 import useLanguage from '../useLanguage';
+import { Link } from 'react-router-dom';
+import { backendEnabled } from '../SiteData';
 
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
@@ -60,6 +62,7 @@ export default function Footer() {
 
           <div className="footer-right-text">
             {lang === 'EN' ? "* Traditional homemade pickles made with fresh vegetables" : isRu ? "* Настоящие домашние соленья из свежайших овощей" : "* Балғын көкөністерден үйдегідей дайындалған тұздалған өнімдер"}
+            {backendEnabled && <Link to="/profile" className="footer-account-link">{lang === 'EN' ? 'My account' : isRu ? 'Личный кабинет' : 'Жеке кабинет'}</Link>}
           </div>
         </div>
       </div>

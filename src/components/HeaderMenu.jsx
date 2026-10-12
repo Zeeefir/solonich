@@ -1,8 +1,7 @@
 import useLanguage from '../useLanguage';
-import { backendEnabled } from '../SiteData';
 import { useState, useEffect, useRef } from 'react';
-import { Sparkles, Globe, ChevronDown, Menu, X, UserRound } from 'lucide-react';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { Sparkles, Globe, ChevronDown, Menu, X } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState('catalog');
@@ -204,7 +203,6 @@ export default function Header() {
           </div>
 
           <div className="header-right">
-            {backendEnabled && <Link to="/profile" className="social-header-btn profile-header-btn" aria-label={lang === 'EN' ? 'My account' : lang === 'KZ' ? 'Жеке кабинет' : 'Личный кабинет'} title={lang === 'EN' ? 'My account' : lang === 'KZ' ? 'Жеке кабинет' : 'Личный кабинет'}><UserRound size={18} /></Link>}
             <a
               href="https://www.instagram.com/solenich.kz?stkn=MXhiZ290eDZnN2xoOQ=="
               target="_blank"
