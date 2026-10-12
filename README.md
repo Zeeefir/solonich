@@ -14,3 +14,13 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Solonich
+
+Public website: https://solonich.vercel.app/
+
+The production build on Vercel serves the catalog from `src/data/products.json` and includes RU/KZ/EN translations. React routes are configured in `vercel.json`.
+
+Local development reads the SQLite database. Run `npm run server` and `npm run dev -- --host 127.0.0.1 --port 5174 --strictPort` in separate terminals. See [LOCAL-DATABASE.md](LOCAL-DATABASE.md) for account setup, product management, backups, and tests.
+
+Database contents, local administrator credentials, and sessions stay in the ignored `/data/` folder. An online database and public account service are not configured. `VITE_API_ENABLED=true` enables API-backed production builds only when a compatible backend has been deployed separately.
+

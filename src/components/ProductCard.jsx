@@ -1,6 +1,9 @@
+import useLanguage from '../useLanguage';
 import { Link } from 'react-router-dom';
 
 export default function ProductCard({ product }) {
+  const lang = useLanguage();
+  const isRu = lang === 'RU';
   // Функция для выбора цвета плашки в зависимости от текста
   const getBadgeStyle = (text) => {
     switch (text?.toUpperCase()) {
@@ -25,7 +28,7 @@ export default function ProductCard({ product }) {
           className="card-badge" 
           style={getBadgeStyle(product.badge)}
         >
-          {product.badge}
+          {lang === 'EN' ? ({ 'ОСТРОЕ': 'SPICY', 'ХИТ': 'BESTSELLER', 'НОВИНКА': 'NEW', 'АКЦИЯ': 'SALE' }[product.badge] || product.badge) : isRu ? product.badge : ({ 'ОСТРОЕ': 'АЩЫ', 'ХИТ': 'ХИТ', 'НОВИНКА': 'ЖАҢА', 'АКЦИЯ': 'АКЦИЯ' }[product.badge] || product.badge)}
         </span>
       )}
 
@@ -34,8 +37,10 @@ export default function ProductCard({ product }) {
           {product.image ? (
             <img 
               src={product.image} 
-              alt={product.title} 
+              alt={lang === 'EN' ? product.titleEn : isRu ? product.title : product.titleKz} 
               className="product-card-img" 
+              loading="lazy"
+              decoding="async"
             />
           ) : (
             <div className="placeholder-jar">🫙</div>
@@ -43,16 +48,16 @@ export default function ProductCard({ product }) {
         </div>
 
         <div className="card-content">
-          <h3 className="card-item-title">{product.title}</h3>
+          <h3 className="card-item-title">{lang === 'EN' ? product.titleEn : isRu ? product.title : product.titleKz}</h3>
 
           <div className="card-item-weight-only">
-            <span className="weight-num">{product.weight}</span>
+            <span className="weight-num">{lang === 'EN' ? product.weight.replace('г', 'g') : product.weight}</span>
           </div>
         </div>
       </Link>
 
       <Link to={`/product/${product.id}`} className="btn-composition">
-        СОСТАВ
+        {lang === 'EN' ? "INGREDIENTS" : isRu ? 'СОСТАВ' : 'ҚҰРАМЫ'}
       </Link>
     </div>
   );

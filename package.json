@@ -1,9 +1,10 @@
 {
-  "name": "solonych-site",
+  "name": "solonich-site",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "server": "node server/index.mjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

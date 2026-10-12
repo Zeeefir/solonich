@@ -1,0 +1,22 @@
+.management-page { max-width: 1140px; margin: 32px auto 60px; padding: 0 20px; }
+.account-panel, .product-editor { background: #fffaf4; border: 1px solid #dfcfbb; border-radius: 22px; padding: 28px; }
+.account-panel { max-width: 480px; margin: 24px auto; }
+.management-page h1 { font-size: 1.8rem; margin-bottom: 16px; }
+.management-page p { line-height: 1.6; margin-bottom: 14px; }
+.management-page label { display: flex; flex-direction: column; gap: 7px; font-weight: 600; margin: 14px 0; }
+.management-page input, .management-page textarea, .management-page select { width: 100%; border: 1px solid #d8c8b4; background: #fff; border-radius: 10px; padding: 12px; font: inherit; color: #2a201b; }
+.management-page textarea { min-height: 100px; resize: vertical; }
+.management-page button, .management-primary, .management-secondary { min-height: 44px; border-radius: 10px; padding: 10px 16px; font: inherit; font-weight: 600; cursor: pointer; border: 1px solid #d8c8b4; background: #fff; color: #2a201b; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.management-page .management-primary { background: var(--brand-red); color: white; border-color: var(--brand-red); }
+.account-panel .management-primary, .account-panel .management-secondary { width: 100%; margin-top: 14px; }
+.management-page button:disabled { opacity: .6; cursor: wait; }
+.management-page .form-error { color: #a51e1e; background: #fff0ef; padding: 12px; border-radius: 10px; }
+.management-page .form-success { color: #236039; }
+.management-heading, .admin-product { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.management-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.editor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; }
+.product-editor { margin: 24px 0; }
+.admin-products { margin-top: 24px; background: #fffaf4; border: 1px solid #dfcfbb; border-radius: 16px; overflow: hidden; }
+.admin-product { padding: 16px; border-bottom: 1px solid #e9ddce; }
+.admin-product:last-child { border-bottom: 0; }
+@media (max-width: 700px) { .editor-grid { grid-template-columns: 1fr; } .management-heading, .admin-product { align-items: flex-start; flex-direction: column; } .account-panel, .product-editor { padding: 20px; } }

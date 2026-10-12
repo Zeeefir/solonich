@@ -1,0 +1,29 @@
+/* Isolated scroll experiment: no changes to layout or scroll speed. */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-pending {
+    opacity: 0;
+    translate: 0 24px;
+  }
+
+  .scroll-pending.scroll-arrived {
+    opacity: 1;
+    translate: 0 0;
+    transition: opacity 650ms ease, translate 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--arrival-delay, 0ms);
+  }
+
+  .scroll-pending:focus-within {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  .scroll-arrived .adv-icon-badge {
+    animation: icon-settle 750ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: var(--arrival-delay, 0ms);
+  }
+}
+
+@keyframes icon-settle {
+  from { transform: scale(0.88) rotate(-6deg); }
+  to { transform: scale(1) rotate(0); }
+}
