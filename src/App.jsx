@@ -8,6 +8,7 @@ import ScrollEffects from './components/ScrollEffects';
 import { SiteData } from './SiteData';
 import ProfilePage from './pages/ProfilePage';
 import AdminPage from './pages/AdminPage';
+import Seo from './components/Seo';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -21,6 +22,7 @@ function App() {
   return (
     <Router>
       <SiteData>
+      <Seo />
       <ScrollToTop />
       <ScrollEffects />
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>

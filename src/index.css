@@ -422,6 +422,14 @@ section, footer {
   opacity: 0.3;
 }
 
+.catalog-intro {
+  max-width: 820px;
+  color: #6b5948;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: -8px 0 26px;
+}
+
 /* СЕТКА ТОВАРОВ: 5 КОЛОНОК */
 .products-grid {
   display: grid;
