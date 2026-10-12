@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { api, useSiteData, backendEnabled } from '../SiteData';
 import useLanguage from '../useLanguage';
 import './Management.css';
@@ -7,11 +7,16 @@ import { localizeError } from '../translations';
 
 const emptyProduct = () => ({ title:'',titleKz:'',titleEn:'',compositionRu:'',compositionKz:'',compositionEn:'',weight:'',image:'',badge:'',nutrition:{proteins:'',fats:'',carbs:'',calories:'',kJ:''},storage:{temp:'от -1°С до +4°С',humidity:'не более 85%',shelfLife:''} });
 export default function AdminPage() {
- const { products, user, loading, error: dataError, refresh } = useSiteData();
+ const { products, user, setUser, loading, error: dataError, refresh } = useSiteData();
  const lang = useLanguage(); const t = (ru,kz,en) => lang === 'EN' ? en : lang === 'KZ' ? kz : ru;
- const location = useLocation();
+ const location = useLocation(); const navigate = useNavigate();
  const [draft,setDraft] = useState(() => location.pathname === '/admin/new' ? emptyProduct() : null); const [error,setError] = useState(''); const [notice,setNotice] = useState(''); const [busy,setBusy] = useState(false);
  const field = (key, value, group) => setDraft(prev => group ? {...prev,[group]: {...prev[group],[key]:value}} : {...prev,[key]:value});
+ const logout = async () => {
+  setBusy(true); setError('');
+  try { await api('/logout', {}); setUser(null); navigate('/profile', { replace: true }); }
+  catch(e) { setError(e.message); } finally { setBusy(false); }
+ };
  const save = async event => {
   event.preventDefault(); setBusy(true); setError(''); setNotice('');
   try { await api(draft.id ? `/products/${draft.id}` : '/products', draft, draft.id ? 'PUT' : 'POST'); await refresh(); setDraft(null); setNotice(t('Товар сохранён', 'Өнім сақталды', 'Product saved')); }
@@ -29,7 +34,7 @@ export default function AdminPage() {
  const textFields=[['title','Название RU','Атауы RU','Name RU'],['titleKz','Название KZ','Атауы KZ','Name KZ'],['titleEn','Название EN','Атауы EN','Name EN'],['weight','Вес (например, 500 г)','Салмағы (мысалы, 500 г)','Weight (e.g. 500 г)'],['image','Фото: /products/photo.jpg или HTTPS-ссылка','Фото: /products/photo.jpg немесе HTTPS-сілтеме','Image: /products/photo.jpg or HTTPS URL']];
  return <section className="management-page admin-page">
   <Link className="back-link" to="/profile">← {t('Мой профиль','Жеке кабинет','My account')}</Link>
-  <div className="management-heading"><div><h1>{t('База товаров','Өнімдер базасы','Product database')}</h1><p>SQLite · {products.length} {t('товаров','өнім','products')}</p></div><button className="management-primary" disabled={busy} onClick={()=>{setDraft(emptyProduct());setError('');setNotice('');}}>{t('+ Добавить товар','+ Өнім қосу','+ Add product')}</button></div>
+  <div className="management-heading"><div><h1>{t('База товаров','Өнімдер базасы','Product database')}</h1><p>SQLite · {products.length} {t('товаров','өнім','products')}</p></div><div className="management-actions"><button className="management-primary" disabled={busy} onClick={()=>{setDraft(emptyProduct());setError('');setNotice('');}}>{t('+ Добавить товар','+ Өнім қосу','+ Add product')}</button><button className="management-secondary" disabled={busy} onClick={logout}>{t('Выйти из аккаунта','Аккаунттан шығу','Sign out')}</button></div></div>
   <p>{t('Добавьте название и состав на трёх языках. Укажите путь к фотографии из папки public/products или HTTPS-ссылку. Изменения сразу появятся в каталоге.','Атауы мен құрамын үш тілде толтырыңыз. public/products папкасындағы фотоның жолын немесе HTTPS-сілтемені көрсетіңіз. Өзгерістер каталогта бірден көрсетіледі.','Enter the name and ingredients in all three languages. Use an image from public/products or an HTTPS URL. Saved changes appear immediately in the catalog.')}</p>
   {(error || dataError) && <p className="form-error" role="alert">{error ? localizeError(error, lang) : dataError}</p>}{notice && <p className="form-success" role="status">{notice}</p>}
   {draft && <form className="product-editor" onSubmit={save}><h2>{draft.id ? t('Редактирование товара','Өнімді өңдеу','Edit product') : t('Новый товар','Жаңа өнім','New product')}</h2><div className="editor-grid">
