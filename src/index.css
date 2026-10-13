@@ -1071,7 +1071,7 @@ section, footer {
 }
 
 .adv-title {
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-weight: 900;
   color: #ffffff;
   margin-bottom: 12px;
@@ -1079,10 +1079,10 @@ section, footer {
 }
 
 .adv-desc {
-  font-size: 0.95rem;
+  font-size: 1.075rem;
   color: #e2d9cd;
-  line-height: 1.5;
-  max-width: 260px;
+  line-height: 1.6;
+  max-width: 300px;
   margin: 0 auto;
 }
 
