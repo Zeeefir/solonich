@@ -1173,17 +1173,17 @@ section, footer {
   width: 100%;
   max-width: 600px;
   margin-left: auto;
-  background: #a7ce72;
-  padding: 10px;
+  background: #f2e5c7;
+  padding: 6px;
   border-radius: 20px;
-  border: 2px solid #84af52;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  border: 1px solid #d5c29b;
+  box-shadow: 0 10px 24px rgba(10, 35, 18, 0.22);
   transition: transform 0.275s ease, box-shadow 0.275s ease;
 }
 
 .footer-map-box:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 14px 30px rgba(10, 35, 18, 0.28);
 }
 
 .footer-map-box iframe {
