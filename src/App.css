@@ -373,7 +373,7 @@ body {
   border-radius: 14px;
   width: 100%;
   margin-top: auto;
-  transition: background-color 0.2s;
+  transition: background-color 0.22s;
 }
 
 .btn-add-cart:hover {

@@ -8,7 +8,7 @@
   .scroll-pending.scroll-arrived {
     opacity: 1;
     translate: 0 0;
-    transition: opacity 700ms ease, translate 800ms cubic-bezier(0.16, 1, 0.3, 1), transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+    transition: opacity 770ms ease, translate 880ms cubic-bezier(0.16, 1, 0.3, 1), transform 330ms ease, box-shadow 330ms ease, border-color 330ms ease;
     transition-delay: var(--arrival-delay, 0ms);
   }
 
@@ -18,7 +18,7 @@
   }
 
   .scroll-arrived .adv-icon-badge {
-    animation: icon-settle 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: icon-settle 880ms cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-delay: var(--arrival-delay, 0ms);
   }
 
@@ -28,18 +28,18 @@
   }
 
   .product-card-box.scroll-arrived {
-    animation: card-unfold 900ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation: card-unfold 990ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
     animation-delay: var(--arrival-delay, 0ms);
   }
 
   .about-card-col.scroll-arrived,
   .footer-left-column.scroll-arrived {
-    animation: panel-unveil 950ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: panel-unveil 1045ms cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-delay: var(--arrival-delay, 0ms);
   }
 
   .adv-card.scroll-arrived {
-    animation: benefit-arrival 850ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: benefit-arrival 935ms cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-delay: var(--arrival-delay, 0ms);
   }
 
@@ -47,19 +47,19 @@
     animation: none;
   }
 
-  .hero-main-title { animation: gentle-arrival 750ms cubic-bezier(0.16, 1, 0.3, 1) both; }
-  .hero-subtext { animation: gentle-arrival 750ms 120ms cubic-bezier(0.16, 1, 0.3, 1) both; }
-  .hero-center-content .btn-to-catalog { animation: gentle-arrival 750ms 220ms cubic-bezier(0.16, 1, 0.3, 1) both; }
-  .product-detail-content { animation: gentle-arrival 650ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .hero-main-title { animation: gentle-arrival 825ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .hero-subtext { animation: gentle-arrival 825ms 132ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .hero-center-content .btn-to-catalog { animation: gentle-arrival 825ms 242ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .product-detail-content { animation: gentle-arrival 715ms cubic-bezier(0.16, 1, 0.3, 1) both; }
 
-  .product-card-box { transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease; }
-  .btn-composition, .btn-to-main { transition: transform 180ms ease, background-color 250ms ease, box-shadow 250ms ease; }
+  .product-card-box { transition: transform 330ms ease, box-shadow 330ms ease, border-color 330ms ease; }
+  .btn-composition, .btn-to-main { transition: transform 198ms ease, background-color 275ms ease, box-shadow 275ms ease; }
   .btn-composition:active, .btn-to-main:active, .social-header-btn:active { transform: scale(0.98); }
 
   @media (hover: hover) and (pointer: fine) {
     .product-card-box:hover { transform: translateY(-4px); }
     .btn-composition:hover, .btn-to-main:hover { box-shadow: 0 5px 14px rgba(150, 29, 29, 0.18); }
-    .adv-card .adv-icon-badge { transition: translate 300ms ease; }
+    .adv-card .adv-icon-badge { transition: translate 330ms ease; }
     .adv-card:hover .adv-icon-badge { translate: 0 -4px; }
   }
 }

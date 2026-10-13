@@ -27,7 +27,7 @@ export default function ScrollEffects() {
       if (target.getBoundingClientRect().top < window.innerHeight - 24) return;
       target.classList.add('scroll-pending');
       const siblings = [...target.parentElement.children];
-      target.style.setProperty('--arrival-delay', `${Math.min(siblings.indexOf(target) % 4, 3) * 65}ms`);
+      target.style.setProperty('--arrival-delay', `${Math.min(siblings.indexOf(target) % 4, 3) * 72}ms`);
       target.style.setProperty('--arrival-tilt', siblings.indexOf(target) % 2 ? '3deg' : '-3deg');
       observer.observe(target);
     });

@@ -35,7 +35,7 @@
   border-color: #2c6237;
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(44, 98, 55, .16);
-  transition: background-color 180ms ease;
+  transition: background-color 198ms ease;
 }
 .account-panel .management-primary:hover:not(:disabled) { background: #214d2a; }
 .account-panel .management-primary:focus-visible { outline: 3px solid #a3bf8a; outline-offset: 3px; }

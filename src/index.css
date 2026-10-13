@@ -8,7 +8,7 @@
   --bg-grid-paper: #fff9ed;
   --text-dark: #2a201b;
   --card-border: #e6d7b9;
-  --transition-smooth: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-smooth: all 0.275s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* Плавный скролл по всей странице */
@@ -75,7 +75,7 @@ section, footer {
   object-fit: contain;
   margin: 0 0 -46px;
   filter: drop-shadow(0 3px 4px rgba(58, 39, 22, 0.1));
-  transition: transform 0.2s ease;
+  transition: transform 0.22s ease;
 }
 
 .logo-img:hover {
@@ -112,7 +112,7 @@ section, footer {
   font-size: 0.9rem;
   padding: 12px 14px;
   border-radius: 12px;
-  transition: color 0.25s ease;
+  transition: color 0.275s ease;
   white-space: nowrap;
 }
 
@@ -146,7 +146,7 @@ section, footer {
   font-weight: 800;
   font-size: 0.85rem;
   color: #2b1f17;
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
@@ -164,7 +164,7 @@ section, footer {
 }
 
 .lang-chevron {
-  transition: transform 0.2s ease;
+  transition: transform 0.22s ease;
   color: #7a6a5c;
 }
 
@@ -183,7 +183,7 @@ section, footer {
   overflow: hidden;
   z-index: 1001;
   min-width: 130px;
-  animation: fadeIn 0.2s ease-out;
+  animation: fadeIn 0.22s ease-out;
 }
 
 .lang-option {
@@ -196,7 +196,7 @@ section, footer {
   font-weight: 700;
   color: #4a3c31;
   cursor: pointer;
-  transition: background-color 0.15s, color 0.15s;
+  transition: background-color 0.165s, color 0.165s;
 }
 
 .lang-option:hover {
@@ -246,7 +246,7 @@ section, footer {
   font-size: 0.8rem;
   text-decoration: none;
   color: #ffffff;
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
   box-shadow: none;
 }
 
@@ -317,7 +317,7 @@ section, footer {
   border-radius: 20px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
   letter-spacing: 0.5px;
-  transition: transform 0.2s ease;
+  transition: transform 0.22s ease;
 }
 
 .btn-to-catalog:hover {
@@ -457,7 +457,7 @@ section, footer {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   position: relative;
   overflow: hidden;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.33s ease, box-shadow 0.33s ease;
 }
 
 .product-card-box:focus-within {
@@ -547,7 +547,7 @@ section, footer {
   width: 100%;
   margin-top: auto;
   cursor: pointer;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  transition: background-color 0.275s ease, box-shadow 0.275s ease;
   letter-spacing: 0.5px;
   box-shadow: 0 2px 6px rgba(187, 42, 42, 0.2);
 }
@@ -570,7 +570,7 @@ section, footer {
   max-width: 1100px;
   margin: 40px auto 60px auto;
   padding: 0 20px;
-  animation: fadeIn 0.4s ease-out;
+  animation: fadeIn 0.44s ease-out;
 }
 
 .back-link {
@@ -582,7 +582,7 @@ section, footer {
   text-decoration: none;
   font-size: 0.95rem;
   margin-bottom: 20px;
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: transform 0.22s ease, color 0.22s ease;
 }
 
 .back-link:hover {
@@ -783,7 +783,7 @@ section, footer {
   font-size: 0.95rem;
   font-weight: 900;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
   box-shadow: 0 6px 18px rgba(187, 42, 42, 0.25);
   text-transform: uppercase;
   letter-spacing: 0.8px;
@@ -824,7 +824,7 @@ section, footer {
   display: flex;
   align-items: center;
   gap: 8px;
-  animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn 0.33s ease-in-out;
   box-shadow: 0 2px 8px rgba(212, 143, 80, 0.1);
 }
 
@@ -957,7 +957,7 @@ section, footer {
   font-size: 0.98rem;
   color: var(--text-dark);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
 }
 
 .partner-chip:hover, .partner-badge:hover {
@@ -1161,7 +1161,7 @@ section, footer {
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.22s ease;
 }
 
 .contacts-list a:hover {
@@ -1178,7 +1178,7 @@ section, footer {
   border-radius: 20px;
   border: 2px solid #581007;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.275s ease, box-shadow 0.275s ease;
 }
 
 .footer-map-box:hover {
@@ -1848,7 +1848,7 @@ button:focus-visible {
 }
 
 .catalog-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
-.catalog-filters button { min-height: 44px; padding: 10px 22px; border: 1px solid #adc096; border-radius: 50px; background: #fff9ed; color: #35602c; font: inherit; font-weight: 700; cursor: pointer; transition: background-color 200ms ease, color 200ms ease; }
+.catalog-filters button { min-height: 44px; padding: 10px 22px; border: 1px solid #adc096; border-radius: 50px; background: #fff9ed; color: #35602c; font: inherit; font-weight: 700; cursor: pointer; transition: background-color 220ms ease, color 220ms ease; }
 .catalog-filters button:hover { background: #e5eddc; }
 .catalog-filters button.active { background: #35602c; border-color: #35602c; color: #fff; }
 

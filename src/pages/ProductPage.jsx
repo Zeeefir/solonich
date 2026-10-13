@@ -191,7 +191,7 @@ export default function ProductPage() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.8px',
                 boxShadow: '0 6px 18px rgba(187, 42, 42, 0.25)',
-                transition: 'background 0.2s'
+                transition: 'background 0.22s'
               }}
             >
               <ArrowLeft size={18} /> {lang === 'EN' ? "Back to products" : isRu ? 'Назад в каталог' : 'Каталогқа оралу'}
