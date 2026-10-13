@@ -19,12 +19,14 @@ export default function HomePage() {
       {/* 1. БАННЕР HERO */}
       <section className="hero-banner">
         <div className="hero-center-content">
+          <div className="anniversary-badge"><span aria-hidden="true">✦</span> {lang === 'EN' ? 'CELEBRATING 10 YEARS' : isRu ? 'НАМ 10 ЛЕТ!' : 'БІЗГЕ 10 ЖЫЛ!'} <span aria-hidden="true">✦</span></div>
           <h1 className="hero-main-title">
             {lang === 'EN' ? <>REVIVING TIME-HONOURED<br />FLAVOURS</> : isRu ? <>ВОЗРОЖДАЯ ЗАБЫТЫЕ<br />ТРАДИЦИИ ВКУСА</> : <>ҰМЫТЫЛҒАН ДӘМ<br />ДӘСТҮРЛЕРІН ЖАҢҒЫРТАМЫЗ</>}
           </h1>
           <p className="hero-subtext">
             {lang === 'EN' ? <>Traditional homemade pickles<br />made with fresh vegetables</> : isRu ? <>Настоящие домашние соленья<br />из свежайших овощей</> : <>Балғын көкөністерден<br />үйдегідей дайындалған тұздалған өнімдер</>}
           </p>
+          <p className="anniversary-caption">{lang === 'EN' ? '10 years of flavour and tradition — thank you for being with us!' : isRu ? '10 лет вкуса и традиций — спасибо, что вы с нами!' : '10 жылдық дәм мен дәстүр — бізбен бірге болғандарыңызға рақмет!'}</p>
           <a href="#catalog" className="btn-to-catalog">
             {lang === 'EN' ? "VIEW PRODUCTS" : isRu ? "В КАТАЛОГ" : "КАТАЛОГҚА"}
           </a>
