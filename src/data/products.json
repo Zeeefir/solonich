@@ -53,7 +53,7 @@
     "titleKz": "Саңырауқұлақ қосылған ашытылған қырыққабат",
     "weight": "850 г",
     "badge": null,
-    "image": "/products/cabbage_with_mushrooms.JPG",
+    "image": "/products/cabbage-mushrooms-new.jpg",
     "compositionRu": "белокачанная капуста, морковь, грибы маслята, сахар, соль, уксус, бензоат натрия.",
     "compositionKz": "ақ қырыққабат, сәбіз, майқұлақ саңырауқұлағы, қант, тұз, сірке суы, натрий бензоаты.",
     "nutrition": {
@@ -77,7 +77,7 @@
     "titleKz": "Ащы ашытылған «Пелюстка» қырыққабаты",
     "weight": "850 г",
     "badge": "ОСТРОЕ",
-    "image": "/products/spicy spicy.JPG",
+    "image": "/products/pelyustka-new.jpg",
     "compositionRu": "белокачанная капуста, перец чили, соль, пряности, бензоат натрия.",
     "compositionKz": "ақ қырыққабат, чили бұрышы, тұз, дәмдеуіштер, натрий бензоаты.",
     "nutrition": {
@@ -149,7 +149,7 @@
     "titleKz": "Қызылша қосылған ашытылған қырыққабат",
     "weight": "850 г",
     "badge": "ОСТРОЕ",
-    "image": "/products/beetroot_petal.JPG",
+    "image": "/products/cabbage-beetroot-new.jpg",
     "compositionRu": "белокачанная капуста, свекла свежая, перец чили, соль, пряности, бензоат натрия.",
     "compositionKz": "ақ қырыққабат, балғын қызылша, чили бұрышы, тұз, дәмдеуіштер, натрий бензоаты.",
     "nutrition": {
@@ -245,7 +245,7 @@
     "titleKz": "Тұздалған қияр",
     "weight": "850 г",
     "badge": null,
-    "image": "/products/apple.png",
+    "image": "/products/cucumbers-new.jpg",
     "compositionRu": "огурцы, соль, пряности.",
     "compositionKz": "қияр, тұз, дәмдеуіштер.",
     "nutrition": {
@@ -269,7 +269,7 @@
     "titleKz": "«Дәруменді» салаты",
     "weight": "450 г",
     "badge": null,
-    "image": "/products/vitamin_salad.png",
+    "image": "/products/vitamin-salad-new.jpg",
     "compositionRu": "белокачанная капуста, морковь, масло растительное, перец полугорький, сахар, соль, бензоат натрия, чеснок.",
     "compositionKz": "ақ қырыққабат, сәбіз, өсімдік майы, жартылай ащы бұрыш, қант, тұз, натрий бензоаты, сарымсақ.",
     "nutrition": {
