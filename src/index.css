@@ -1847,3 +1847,10 @@ button:focus-visible {
 .catalog-category + .catalog-category { margin-top: 36px; }
 .catalog-category-title { font-size: 1.25rem; color: #35602c; margin-bottom: 18px; font-weight: 800; }
 .hero-banner { padding-bottom: 64px; }
+
+@media (min-width: 701px) {
+  .product-card-box { padding: 14px; border-radius: 20px; }
+  .card-image-wrapper { height: auto; aspect-ratio: 4 / 5; margin-bottom: 18px; border-radius: 12px; }
+  .card-item-title { font-size: 1rem; line-height: 1.45; }
+  .card-item-weight-only { margin: 8px 0 16px; }
+}

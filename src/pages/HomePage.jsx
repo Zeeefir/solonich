@@ -8,7 +8,8 @@ export default function HomePage() {
   const isRu = lang === 'RU';
   const { products: productsData, loading, error } = useSiteData();
   const cabbage = productsData.filter(product => /капуст|пелюст/i.test(product.title));
-  const snacks = productsData.filter(product => !/капуст|пелюст/i.test(product.title));
+  const pickles = productsData.filter(product => !/капуст|пелюст/i.test(product.title) && /огур|солен|солён|марин/i.test(product.title));
+  const snacks = productsData.filter(product => !cabbage.includes(product) && !pickles.includes(product));
   const partners = [
     lang === 'EN' ? 'MAGNUM' : 'МАГНУМ',
     'ADK',
@@ -54,7 +55,7 @@ export default function HomePage() {
           <p className="catalog-intro">{lang === 'EN' ? 'Solonich sauerkraut, salted cucumbers, Korean-style carrots, adjika and vegetable salads — made in Almaty. Explore ingredients and nutrition for every product.' : isRu ? 'Квашеная капуста, солёные огурцы, морковь по-корейски, аджика и овощные салаты «Солёныч» — производство в Алматы. Выберите продукт, чтобы узнать состав и пищевую ценность.' : '«Солёныч» ашытылған қырыққабаты, тұздалған қияр, корейше сәбіз, аджика және көкөніс салаттары Алматыда өндіріледі. Өнімнің құрамы мен тағамдық құндылығын қараңыз.'}</p>
           {loading && <p>{lang === 'EN' ? 'Loading products…' : isRu ? 'Загрузка товаров…' : 'Өнімдер жүктелуде…'}</p>}
           {error && <p role="alert">{error}</p>}
-          {[{title:lang === 'EN' ? 'Cabbage' : isRu ? 'Капуста' : 'Қырыққабат',items:cabbage},{title:lang === 'EN' ? 'Snacks and pickles' : isRu ? 'Закуски и соленья' : 'Тіскебасарлар мен тұздалған өнімдер',items:snacks}].filter(group=>group.items.length).map(group=><div className="catalog-category" key={group.title}><h3 className="catalog-category-title">{group.title}</h3><div className="products-grid">{group.items.map(product=><ProductCard key={product.id} product={product}/>)}</div></div>)}
+          {[{title:lang === 'EN' ? 'Cabbage' : isRu ? 'Капуста' : 'Қырыққабат',items:cabbage},{title:lang === 'EN' ? 'Snacks' : isRu ? 'Закуски' : 'Тіскебасарлар',items:snacks},{title:lang === 'EN' ? 'Pickles' : isRu ? 'Соленья' : 'Тұздалған өнімдер',items:pickles}].filter(group=>group.items.length).map(group=><div className="catalog-category" key={group.title}><h3 className="catalog-category-title">{group.title}</h3><div className="products-grid">{group.items.map(product=><ProductCard key={product.id} product={product}/>)}</div></div>)}
         </div>
       </section>
 
