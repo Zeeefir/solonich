@@ -70,10 +70,10 @@ section, footer {
 }
 
 .logo-img {
-  height: 110px;
+  height: 122px;
   width: auto;
   object-fit: contain;
-  margin: 0 0 -40px;
+  margin: 0 0 -46px;
   filter: drop-shadow(0 3px 4px rgba(58, 39, 22, 0.1));
   transition: transform 0.2s ease;
 }
@@ -1446,8 +1446,8 @@ button:focus-visible {
   }
 
   .logo-img {
-    height: 100px;
-    margin: 0 0 -38px;
+    height: 110px;
+    margin: 0 0 -44px;
   }
 
   .header-right-group {
@@ -1553,9 +1553,9 @@ button:focus-visible {
   }
 
   .logo-img {
-    height: 82px;
-    max-width: 104px;
-    margin-bottom: -32px;
+    height: 90px;
+    max-width: 114px;
+    margin-bottom: -36px;
   }
 
   .header-right-group {
