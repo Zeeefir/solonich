@@ -1876,11 +1876,13 @@ button:focus-visible {
   .about-container,
   .advantages-overlay,
   .footer-container {
-    max-width: clamp(1140px, 84vw, 1600px);
+    width: 92%;
+    max-width: none;
   }
 
   .product-page-container {
-    max-width: clamp(1100px, 80vw, 1440px);
+    width: 92%;
+    max-width: none;
   }
 
   .products-grid {
