@@ -1,0 +1,26 @@
+begin;
+create table public.reviews(id uuid primary key default gen_random_uuid(),author_id uuid not null default auth.uid() references auth.users(id),author_name text not null default '',store text not null check(length(trim(store)) between 2 and 120),rating integer not null check(rating between 1 and 5),body text not null check(length(trim(body)) between 5 and 2000),created_at timestamptz not null default now());
+create table public.review_replies(review_id uuid primary key references public.reviews(id) on delete cascade,author_id uuid not null default auth.uid() references auth.users(id),body text not null check(length(trim(body)) between 2 and 2000),created_at timestamptz not null default now());
+create index on public.reviews(author_id,created_at desc);
+alter table public.reviews enable row level security;
+alter table public.review_replies enable row level security;
+revoke all on public.reviews,public.review_replies from anon,authenticated;
+grant select on public.reviews,public.review_replies to anon,authenticated;
+grant insert(store,rating,body) on public.reviews to authenticated;
+grant insert(review_id,body),update(body) on public.review_replies to authenticated;
+create function private.verified_account() returns boolean language sql stable security definer set search_path='' as $$ select exists(select 1 from auth.users where id=auth.uid() and email_confirmed_at is not null); $$;
+revoke all on function private.verified_account() from public,anon,authenticated;
+grant execute on function private.verified_account() to authenticated;
+create function private.stamp_review() returns trigger language plpgsql security definer set search_path='' as $$ begin
+ if not private.verified_account() then raise exception 'Confirm your email first' using errcode='42501'; end if;
+ if (select count(*) from public.reviews where author_id=auth.uid() and created_at>now()-interval '1 day')>=5 then raise exception 'Review limit reached'; end if;
+ new.author_id:=auth.uid(); select name into new.author_name from public.profiles where id=auth.uid(); new.created_at:=now(); return new;
+end; $$;
+revoke all on function private.stamp_review() from public,anon,authenticated;
+create trigger stamp_review before insert on public.reviews for each row execute function private.stamp_review();
+create policy read_reviews on public.reviews for select to anon,authenticated using(true);
+create policy own_review on public.reviews for insert to authenticated with check(author_id=(select auth.uid()) and (select private.verified_account()));
+create policy read_replies on public.review_replies for select to anon,authenticated using(true);
+create policy admin_reply_insert on public.review_replies for insert to authenticated with check(author_id=(select auth.uid()) and (select private.is_admin()));
+create policy admin_reply_update on public.review_replies for update to authenticated using((select private.is_admin())) with check((select private.is_admin()));
+commit;

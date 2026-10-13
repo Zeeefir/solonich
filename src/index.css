@@ -1881,3 +1881,6 @@ button:focus-visible {
 .about-container { border: 1px solid #d3dfc9; background: #fbfdf7; }
 .site-footer { background-color: var(--brand-green-dark); }
 @media (max-width: 700px) { .catalog-top-bar { padding: 16px; } }
+
+.header-account-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 14px; border: 1px solid #aec498; border-radius: 12px; color: #28572c; background: #f6f9ef; font-size: .82rem; font-weight: 700; text-decoration: none; }
+@media(max-width:700px) { .is-menu-open .header-account-link { flex: 1; } }

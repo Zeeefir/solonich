@@ -9,6 +9,8 @@ import { SiteData } from './SiteData';
 import ProfilePage from './pages/ProfilePage';
 import AdminPage from './pages/AdminPage';
 import Seo from './components/Seo';
+import VisitorTracker from './components/VisitorTracker';
+import Reviews from './components/Reviews';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -18,11 +20,13 @@ function ScrollToTop() {
   return null;
 }
 
+function PublicReviews() { const {pathname}=useLocation(); return pathname==='/' ? <Reviews /> : null; }
 function App() {
   return (
     <Router>
       <SiteData>
       <Seo />
+      <VisitorTracker />
       <ScrollToTop />
       <ScrollEffects />
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -37,6 +41,7 @@ function App() {
             <Route path="/setup" element={<ProfilePage />} />
           </Routes>
         </main>
+        <PublicReviews />
         <Footer />
       </div>
       </SiteData>

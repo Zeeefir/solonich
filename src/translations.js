@@ -6,6 +6,12 @@ export function formatUnit(value, lang) {
 export function localizeError(message, lang) {
   if (lang === 'EN') return message;
   const errors = {
+    'Password format': ['Пароль: 6 символов, цифра, большая и маленькая английские буквы.', 'Құпиясөз: 6 таңба, сан, ағылшынша бас және кіші әріптер.'],
+    'Invalid verification code': ['Неверный или просроченный код подтверждения.', 'Растау коды қате немесе мерзімі өткен.'],
+    'Failed to send email': ['Не удалось отправить письмо. Попробуйте позже.', 'Хат жіберілмеді. Кейін қайталап көріңіз.'],
+    'Invalid login credentials': ['Неверный email или пароль', 'Email немесе құпиясөз қате'],
+    'Email not confirmed': ['Подтвердите email по ссылке из письма', 'Хаттағы сілтемемен email растаңыз'],
+    'User already registered': ['Этот email уже зарегистрирован', 'Бұл email бұрын тіркелген'],
     'Enter a valid email address': ['Введите корректный email', 'Дұрыс email енгізіңіз'],
     'Name must contain 1–80 characters': ['Имя должно содержать от 1 до 80 символов', 'Аты 1–80 таңбадан тұруы керек'],
     'Password must contain 10–128 characters': ['Пароль должен содержать от 10 до 128 символов', 'Құпиясөз 10–128 таңбадан тұруы керек'],

@@ -20,3 +20,10 @@
 .admin-product { padding: 16px; border-bottom: 1px solid #e9ddce; }
 .admin-product:last-child { border-bottom: 0; }
 @media (max-width: 700px) { .editor-grid { grid-template-columns: 1fr; } .management-heading, .admin-product { align-items: flex-start; flex-direction: column; } .account-panel, .product-editor { padding: 20px; } }
+.visitor-stats { background: #fffaf4; border: 1px solid #dfcfbb; border-radius: 18px; padding: 22px; margin: 20px 0 28px; }
+.visitor-stats h2 { font-size: 1.25rem; }
+.visitor-stats-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; margin: 18px 0; }
+.visitor-stats-grid > div { display: flex; flex-direction: column; gap: 7px; padding: 18px; background: #f1e6d7; border-radius: 12px; }
+.visitor-stats-grid strong { font-size: 1.8rem; color: var(--brand-red); }
+.visitor-stats-grid span, .visitor-stats small { font-size: .82rem; line-height: 1.5; color: #6b5948; }
+@media(max-width:700px) { .visitor-stats-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
