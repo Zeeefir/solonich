@@ -9,7 +9,7 @@ export default function ScrollEffects() {
   const { products, loading } = useSiteData();
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || typeof IntersectionObserver !== 'function' || !CSS.supports('translate', '0 24px')) return;
 
     const targets = [...document.querySelectorAll(
       '.catalog-top-bar, .product-card-box, .about-card-col, .about-highlight-box, .advantages-main-title, .adv-card, .footer-left-column, .footer-map-box'

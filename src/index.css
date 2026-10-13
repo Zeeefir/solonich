@@ -46,6 +46,7 @@ section, footer {
   border-bottom: 1px solid #e7dccc;
   box-shadow: 0 4px 16px rgba(58, 39, 22, 0.04);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .header-inner {
@@ -374,6 +375,7 @@ section, footer {
     radial-gradient(ellipse at 0% 30%, rgba(177, 193, 137, 0.14), transparent 50%),
     radial-gradient(ellipse at 100% 65%, rgba(224, 179, 117, 0.14), transparent 50%);
   mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 75%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 75%, transparent);
   pointer-events: none;
 }
 
@@ -388,6 +390,7 @@ section, footer {
     radial-gradient(ellipse 38% 28% at 25% 35%, rgba(158, 185, 112, 0.16), transparent 100%),
     radial-gradient(ellipse 42% 30% at 72% 60%, rgba(226, 172, 95, 0.18), transparent 100%);
   mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 72%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 72%, transparent);
 }
 
 .catalog-container {

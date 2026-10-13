@@ -32,10 +32,10 @@ export default function Header() {
   ];
 
   const selectLanguage = (selectedLang) => {
-    localStorage.setItem('app_lang', selectedLang);
+    try { localStorage.setItem('app_lang', selectedLang); } catch { /* Language remains usable when browser storage is blocked. */ }
     setIsLangOpen(false);
     // Отправляем событие, чтобы шапка мгновенно обновилась без перезагрузки
-    window.dispatchEvent(new Event('storage'));
+    window.dispatchEvent(new CustomEvent('languagechange', { detail: selectedLang }));
   };
 
 
@@ -100,11 +100,11 @@ export default function Header() {
       });
     };
     updatePill();
-    const observer = new ResizeObserver(updatePill);
-    if (navRef.current) observer.observe(navRef.current);
+    const observer = typeof ResizeObserver === 'function' ? new ResizeObserver(updatePill) : null;
+    if (navRef.current) observer?.observe(navRef.current);
     window.addEventListener('resize', updatePill);
     return () => {
-      observer.disconnect();
+      observer?.disconnect();
       window.removeEventListener('resize', updatePill);
     };
   }, [activeSection, isProductPage, lang, isMenuOpen]);
