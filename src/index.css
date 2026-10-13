@@ -1957,3 +1957,29 @@ button:focus-visible {
     color: #302a25 !important;
   }
 }
+
+/* Scale typography along with the wider desktop catalog. */
+@media (min-width: 1440px) {
+  html { font-size: clamp(16px, .95vw, 20px); }
+  .card-item-title {
+    font-size: clamp(1.2rem, 1.2vw, 1.5rem);
+    line-height: 1.4;
+    min-height: 2.8em;
+  }
+  .weight-num { font-size: 1rem; color: #574e43; }
+  .btn-composition,
+  .btn-to-catalog { font-size: 1rem; padding: 16px 24px; min-height: 56px; }
+  .catalog-filters button { font-size: 1.05rem; padding: 14px 28px; }
+  .catalog-category-title { font-size: 1.5rem; }
+  .hero-main-title { font-size: clamp(3rem, 3.8vw, 4.6rem); line-height: 1.1; }
+  .hero-subtext { font-size: 1.3rem; line-height: 1.5; }
+  .anniversary-caption { font-size: 1.1rem; line-height: 1.6; max-width: 48ch; }
+  .about-body-text,
+  .about-text,
+  .advantage-text,
+  .contacts-list { font-size: 1.05rem; line-height: 1.75; }
+  .shared-grid-background {
+    background-image: url('/paper-ornament-wide.svg');
+    background-size: 560px 374px;
+  }
+}
