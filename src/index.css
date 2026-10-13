@@ -1,11 +1,11 @@
 :root {
-  --brand-red: #bb2a2a;
-  --brand-red-dark: #961d1d;
-  --bg-warm-beige: #ebdcc9;
+  --brand-red: #c82529;
+  --brand-red-dark: #a51b20;
+  --bg-warm-beige: #efe1c5;
   --bg-hero-beige: #e5d2b8;
-  --bg-grid-paper: #fcf8f2;
+  --bg-grid-paper: #fff9ed;
   --text-dark: #2a201b;
-  --card-border: #e2d7c7;
+  --card-border: #e6d7b9;
   --transition-smooth: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -68,10 +68,10 @@ section, footer {
 }
 
 .logo-img {
-  height: 92px;
+  height: 110px;
   width: auto;
   object-fit: contain;
-  margin: 0 0 -34px;
+  margin: 0 0 -40px;
   filter: drop-shadow(0 4px 6px rgba(58, 39, 22, 0.12));
   transition: transform 0.2s ease;
 }
@@ -356,7 +356,7 @@ section, footer {
 .shared-grid-background {
   position: relative;
   isolation: isolate;
-  background-color: #efe4d4;
+  background-color: #f3e8d2;
   background-image: url('/paper-ornament.svg');
   background-size: 420px 280px;
   background-position: 0 0;
@@ -1444,8 +1444,8 @@ button:focus-visible {
   }
 
   .logo-img {
-    height: 82px;
-    margin: 0 0 -30px;
+    height: 100px;
+    margin: 0 0 -38px;
   }
 
   .header-right-group {
@@ -1551,9 +1551,9 @@ button:focus-visible {
   }
 
   .logo-img {
-    height: 64px;
-    max-width: 82px;
-    margin-bottom: -24px;
+    height: 82px;
+    max-width: 104px;
+    margin-bottom: -32px;
   }
 
   .header-right-group {
