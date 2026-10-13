@@ -1,5 +1,4 @@
 import useLanguage from '../useLanguage';
-import { Link } from 'react-router-dom';
 import { getActiveSection } from '../activeSection.mjs';
 import { useState, useEffect, useRef } from 'react';
 import { Sparkles, Globe, ChevronDown, Menu, X } from 'lucide-react';
@@ -207,7 +206,6 @@ export default function Header() {
           </div>
 
           <div className="header-right">
-            <Link to="/profile" className="header-account-link">{lang==='EN'?'Account':lang==='KZ'?'Аккаунт':'Аккаунт'}</Link>
             <a
               href="https://www.instagram.com/solenich.kz?stkn=MXhiZ290eDZnN2xoOQ=="
               target="_blank"

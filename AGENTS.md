@@ -8,4 +8,4 @@ The user requests storing every newly created credential in the ignored local `d
 
 The brand's Latin spelling is Solonich.
 
-The user now requests online products, administration and administrator-only visitor statistics. Supabase and Vercel connections are required for activation. Until configured, preserve local SQLite operation and the public static catalog. Do not migrate local sessions or expose private credentials in frontend code or Git.
+The user now wants only owner administration of the online catalog. Public registration, customer profiles, reviews and visitor statistics are cancelled. Keep the confirmed owner's account and product management, with access enforced in Supabase. Do not reactivate cancelled features unless requested.

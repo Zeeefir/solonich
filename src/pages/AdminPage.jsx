@@ -4,8 +4,6 @@ import { api, useSiteData, backendEnabled } from '../SiteData';
 import useLanguage from '../useLanguage';
 import './Management.css';
 import { localizeError } from '../translations';
-import VisitorStats from '../components/VisitorStats';
-import Reviews from '../components/Reviews';
 
 const emptyProduct = () => ({ title:'',titleKz:'',titleEn:'',compositionRu:'',compositionKz:'',compositionEn:'',weight:'',image:'',badge:'',nutrition:{proteins:'',fats:'',carbs:'',calories:'',kJ:''},storage:{temp:'от -1°С до +4°С',humidity:'не более 85%',shelfLife:''} });
 export default function AdminPage() {
@@ -32,12 +30,10 @@ export default function AdminPage() {
  };
  if (!backendEnabled) return <section className="management-page"><h1>{t('Управление товарами доступно локально','Өнімдерді басқару жергілікті нұсқада қолжетімді','Product management is available in the local version')}</h1><Link to="/">{t('На главную','Басты бетке','Home')}</Link></section>;
  if (loading) return <section className="management-page">{t('Загрузка…','Жүктелуде…','Loading…')}</section>;
- if (!user || user.role !== 'admin') return <section className="management-page"><h1>{t('Доступ для администратора','Әкімшіге қолжетімді','Administrator access')}</h1><p>{dataError}</p><Link to="/profile">{t('Войти в профиль','Жеке кабинетке кіру','Sign in')}</Link> · <Link to="/setup">{t('Первичная настройка','Бастапқы баптау','Initial setup')}</Link></section>;
+ if (!user || user.role !== 'admin') return <section className="management-page"><h1>{t('Доступ для администратора','Әкімшіге қолжетімді','Administrator access')}</h1><p>{dataError}</p><Link to="/profile">{t('Войти в профиль','Жеке кабинетке кіру','Sign in')}</Link></section>;
  const textFields=[['title','Название RU','Атауы RU','Name RU'],['titleKz','Название KZ','Атауы KZ','Name KZ'],['titleEn','Название EN','Атауы EN','Name EN'],['weight','Вес (например, 500 г)','Салмағы (мысалы, 500 г)','Weight (e.g. 500 г)'],['image','Фото: /products/photo.jpg или HTTPS-ссылка','Фото: /products/photo.jpg немесе HTTPS-сілтеме','Image: /products/photo.jpg or HTTPS URL']];
  return <section className="management-page admin-page">
   <Link className="back-link" to="/profile">← {t('Мой профиль','Жеке кабинет','My account')}</Link>
-  <VisitorStats />
-  <Reviews />
   <div className="management-heading"><div><h1>{t('База товаров','Өнімдер базасы','Product database')}</h1><p>{t('Общая база','Ортақ база','Shared database')} · {products.length} {t('товаров','өнім','products')}</p></div><div className="management-actions"><button className="management-primary" disabled={busy} onClick={()=>{setDraft(emptyProduct());setError('');setNotice('');}}>{t('+ Добавить товар','+ Өнім қосу','+ Add product')}</button><button className="management-secondary" disabled={busy} onClick={logout}>{t('Выйти из аккаунта','Аккаунттан шығу','Sign out')}</button></div></div>
   <p>{t('Добавьте название и состав на трёх языках. Укажите путь к фотографии из папки public/products или HTTPS-ссылку. Изменения сразу появятся в каталоге.','Атауы мен құрамын үш тілде толтырыңыз. public/products папкасындағы фотоның жолын немесе HTTPS-сілтемені көрсетіңіз. Өзгерістер каталогта бірден көрсетіледі.','Enter the name and ingredients in all three languages. Use an image from public/products or an HTTPS URL. Saved changes appear immediately in the catalog.')}</p>
   {(error || dataError) && <p className="form-error" role="alert">{error ? localizeError(error, lang) : dataError}</p>}{notice && <p className="form-success" role="status">{notice}</p>}

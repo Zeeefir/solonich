@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 import Header from './components/HeaderMenu';
@@ -9,8 +9,6 @@ import { SiteData } from './SiteData';
 import ProfilePage from './pages/ProfilePage';
 import AdminPage from './pages/AdminPage';
 import Seo from './components/Seo';
-import VisitorTracker from './components/VisitorTracker';
-import Reviews from './components/Reviews';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -20,13 +18,11 @@ function ScrollToTop() {
   return null;
 }
 
-function PublicReviews() { const {pathname}=useLocation(); return pathname==='/' ? <Reviews /> : null; }
 function App() {
   return (
     <Router>
       <SiteData>
       <Seo />
-      <VisitorTracker />
       <ScrollToTop />
       <ScrollEffects />
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -38,10 +34,9 @@ function App() {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/admin/new" element={<AdminPage />} />
-            <Route path="/setup" element={<ProfilePage />} />
+            <Route path="/setup" element={<Navigate to="/profile" replace />} />
           </Routes>
         </main>
-        <PublicReviews />
         <Footer />
       </div>
       </SiteData>
