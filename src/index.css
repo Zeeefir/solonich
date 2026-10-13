@@ -1173,10 +1173,10 @@ section, footer {
   width: 100%;
   max-width: 600px;
   margin-left: auto;
-  background: #7a180b;
+  background: #2c6237;
   padding: 10px;
   border-radius: 20px;
-  border: 2px solid #581007;
+  border: 2px solid #729466;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   transition: transform 0.275s ease, box-shadow 0.275s ease;
 }
