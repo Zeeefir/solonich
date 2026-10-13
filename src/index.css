@@ -1229,6 +1229,8 @@ section, footer {
   letter-spacing: 0.5px;
 }
 
+.footer-logo-img { display: block; width: 110px; height: auto; }
+
 .footer-right-text {
   font-style: italic;
   opacity: 0.9;

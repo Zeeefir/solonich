@@ -7,7 +7,7 @@ const products = JSON.parse(readFileSync('src/data/products.json','utf8'));
 test('SEO pages have unique metadata, public URLs and private-page exclusions', () => {
  const home = readFileSync('dist/index.html','utf8');
  assert.match(home, /<title>Квашеная капуста и соленья в Алматы — Солёныч<\/title>/);
- assert.match(home, /rel="icon" type="image\/png" href="\/logo.png"/);
+ assert.match(home, /rel="icon" type="image\/png" href="\/favicon.png"/);
  const titles = new Set();
  for (const product of products) {
   const html = readFileSync(`dist/product/${product.id}/index.html`,'utf8');

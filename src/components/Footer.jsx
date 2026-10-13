@@ -55,9 +55,7 @@ export default function Footer() {
         {/* Нижняя полоска с бейджем и копирайтом */}
         <div className="footer-bottom-bar">
           <div className="footer-center-badge">
-            <div className="footer-badge-icon">
-              <span className="footer-logo-text">{lang === "EN" ? "SOLONICH" : "СОЛЁНЫЧ"}</span>
-            </div>
+            <Link to="/" aria-label={lang === 'EN' ? 'Solonich — Home' : isRu ? 'Солёныч — на главную' : 'Солёныч — басты бетке'}><img className="footer-logo-img" src="/logo.svg" alt="Солёныч" width="110" height="100" loading="lazy" /></Link>
           </div>
 
           <div className="footer-right-text">
