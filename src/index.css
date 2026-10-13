@@ -1,6 +1,8 @@
 :root {
   --brand-red: #c82529;
   --brand-red-dark: #a51b20;
+  --brand-green: #2b6635;
+  --brand-green-dark: #1d4b27;
   --bg-warm-beige: #efe1c5;
   --bg-hero-beige: #e5d2b8;
   --bg-grid-paper: #fff9ed;
@@ -1859,3 +1861,16 @@ button:focus-visible {
 .catalog-filters button { min-height: 44px; padding: 10px 22px; border: 1px solid #adc096; border-radius: 50px; background: #fff9ed; color: #35602c; font: inherit; font-weight: 700; cursor: pointer; transition: background-color 200ms ease, color 200ms ease; }
 .catalog-filters button:hover { background: #e5eddc; }
 .catalog-filters button.active { background: #35602c; border-color: #35602c; color: #fff; }
+
+/* Green accents inspired by the original vegetable branding. */
+.catalog-top-bar { padding: 20px 24px; border-radius: 18px; background: linear-gradient(120deg, #24572c, #397443); box-shadow: 0 7px 20px rgba(33, 79, 40, 0.12); }
+.catalog-top-bar .catalog-heading { color: #fff9e7; }
+.catalog-top-bar .catalog-line { background-color: #d5e6c0; opacity: 0.55; }
+.catalog-intro { margin-top: 0; }
+.product-card-box { border-color: #d3dfc9; background: linear-gradient(#fff, #f7faf3); }
+.product-card-box:hover, .product-card-box:focus-within { border-color: #8ba875; }
+.btn-composition { background-color: var(--brand-green); box-shadow: 0 2px 6px rgba(33, 79, 40, 0.18); }
+.btn-composition:hover, .btn-composition:active { background-color: var(--brand-green-dark); }
+.about-container { border: 1px solid #d3dfc9; background: #fbfdf7; }
+.site-footer { background-color: var(--brand-green-dark); }
+@media (max-width: 700px) { .catalog-top-bar { padding: 16px; } }
