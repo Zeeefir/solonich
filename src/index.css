@@ -1911,3 +1911,49 @@ button:focus-visible {
     object-fit: contain !important;
   }
 }
+
+@media (min-width: 701px) {
+  .product-ingredients h3 {
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+  }
+  .product-ingredients p {
+    font-size: 1.0625rem !important;
+    line-height: 1.75 !important;
+    font-weight: 400 !important;
+    color: #302a25 !important;
+  }
+  .nutrition-section h4 {
+    font-size: 1rem !important;
+    line-height: 1.5;
+  }
+  .nutrition-grid > div {
+    padding: 16px 10px !important;
+    gap: 4px;
+  }
+  .nutrition-grid > div > span:first-child {
+    font-size: .9375rem !important;
+    color: #51453b !important;
+  }
+  .nutrition-grid > div > span:nth-child(2) {
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+  }
+  .nutrition-grid > div > span:nth-child(3) {
+    font-size: .875rem !important;
+    color: #645548 !important;
+  }
+  .storage-grid > div {
+    padding: 16px !important;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .storage-grid > div > span:first-child {
+    font-weight: 700 !important;
+    margin-bottom: 6px !important;
+  }
+  .storage-grid > div > span:last-child {
+    color: #302a25 !important;
+  }
+}

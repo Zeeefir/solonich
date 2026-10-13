@@ -122,7 +122,7 @@ export default function ProductPage() {
             {product.description && <p className="detail-description" style={{ margin: '0 0 16px 0', fontSize: '1.05rem', lineHeight: '1.5', color: '#5a4b40' }}>{product.description}</p>}
 
             {/* Блок состава */}
-            <div style={{ border: '1px solid #ebdcc7', borderRadius: '16px', overflow: 'hidden', background: '#faf8f5', padding: '16px 20px', marginBottom: '16px', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            <div className="product-ingredients" style={{ border: '1px solid #ebdcc7', borderRadius: '16px', overflow: 'hidden', background: '#faf8f5', padding: '16px 20px', marginBottom: '16px', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
               <h3 style={{ fontSize: '1.05rem', margin: '0 0 6px 0', fontWeight: '900', color: '#2b1f17' }}>
                 {lang === 'EN' ? "Ingredients:" : isRu ? 'Состав продукта:' : 'Құрамы:'}
               </h3>
