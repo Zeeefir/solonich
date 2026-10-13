@@ -1232,34 +1232,20 @@ section, footer {
 }
 
 .footer-account-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  display: block;
   width: fit-content;
-  min-height: 48px;
-  margin: 16px 0 0 auto;
-  padding: 12px 20px;
-  color: #fff9e9;
-  background: #2c6237;
-  border: 1px solid #729466;
-  border-radius: 14px;
-  font-size: 0.9rem;
-  font-weight: 700;
+  margin: 8px 0 0 auto;
+  padding: 6px 0;
+  color: inherit;
+  font-size: 0.78rem;
   font-style: normal;
-  opacity: 1;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
-  transition: background-color 180ms ease, box-shadow 180ms ease;
+  opacity: 0.7;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
-
 .footer-account-link:hover,
-.footer-account-link:focus-visible {
-  background: #397a45;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
-}
-
-.footer-account-link:focus-visible { outline: 3px solid #efd798; outline-offset: 4px; }
+.footer-account-link:focus-visible { opacity: 1; }
+.footer-account-link:focus-visible { outline: 2px solid #efd798; outline-offset: 3px; }
 
 .footer-credit {
   margin-top: 22px;
