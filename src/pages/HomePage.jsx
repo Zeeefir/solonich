@@ -19,7 +19,7 @@ export default function HomePage() {
       {/* 1. БАННЕР HERO */}
       <section className="hero-banner">
         <div className="hero-center-content">
-          <div className="anniversary-badge"><span aria-hidden="true">✦</span> {lang === 'EN' ? 'CELEBRATING 10 YEARS' : isRu ? 'НАМ 10 ЛЕТ!' : 'БІЗГЕ 10 ЖЫЛ!'} <span aria-hidden="true">✦</span></div>
+          <div className="anniversary-badge"><span className="anniversary-star" aria-hidden="true">✦</span><span className="anniversary-number">10</span><span className="anniversary-years">{lang === 'EN' ? 'YEARS' : isRu ? 'ЛЕТ' : 'ЖЫЛ'}<small>{lang === 'EN' ? 'TOGETHER' : isRu ? 'ВМЕСТЕ С ВАМИ' : 'СІЗДЕРМЕН БІРГЕ'}</small></span><span className="anniversary-star" aria-hidden="true">✦</span></div>
           <h1 className="hero-main-title">
             {lang === 'EN' ? <>REVIVING TIME-HONOURED<br />FLAVOURS</> : isRu ? <>ВОЗРОЖДАЯ ЗАБЫТЫЕ<br />ТРАДИЦИИ ВКУСА</> : <>ҰМЫТЫЛҒАН ДӘМ<br />ДӘСТҮРЛЕРІН ЖАҢҒЫРТАМЫЗ</>}
           </h1>
