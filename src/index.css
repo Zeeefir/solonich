@@ -1876,7 +1876,7 @@ button:focus-visible {
   .about-container,
   .advantages-overlay,
   .footer-container {
-    width: 92%;
+    width: 86%;
     max-width: none;
   }
 
