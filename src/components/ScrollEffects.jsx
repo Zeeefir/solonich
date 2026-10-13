@@ -28,6 +28,7 @@ export default function ScrollEffects() {
       target.classList.add('scroll-pending');
       const siblings = [...target.parentElement.children];
       target.style.setProperty('--arrival-delay', `${Math.min(siblings.indexOf(target) % 4, 3) * 65}ms`);
+      target.style.setProperty('--arrival-tilt', siblings.indexOf(target) % 2 ? '3deg' : '-3deg');
       observer.observe(target);
     });
 
@@ -36,6 +37,7 @@ export default function ScrollEffects() {
       targets.forEach((target) => {
         target.classList.remove('scroll-pending', 'scroll-arrived');
         target.style.removeProperty('--arrival-delay');
+        target.style.removeProperty('--arrival-tilt');
       });
     };
   }, [pathname, products, loading]);
