@@ -1854,3 +1854,8 @@ button:focus-visible {
   .card-item-title { font-size: 1rem; line-height: 1.45; }
   .card-item-weight-only { margin: 8px 0 16px; }
 }
+
+.catalog-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+.catalog-filters button { min-height: 44px; padding: 10px 22px; border: 1px solid #adc096; border-radius: 50px; background: #fff9ed; color: #35602c; font: inherit; font-weight: 700; cursor: pointer; transition: background-color 200ms ease, color 200ms ease; }
+.catalog-filters button:hover { background: #e5eddc; }
+.catalog-filters button.active { background: #35602c; border-color: #35602c; color: #fff; }
