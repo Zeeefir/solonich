@@ -422,21 +422,6 @@ section, footer {
   opacity: 0.3;
 }
 
-.catalog-intro {
-  max-width: none;
-  color: #30462c;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.65;
-  margin: 0 0 26px;
-  padding: 18px 22px;
-  background: #fffdf5;
-  border: 1px solid #d7e1c9;
-  border-left: 4px solid #35602c;
-  border-radius: 12px;
-  box-shadow: 0 3px 12px rgba(46, 69, 32, 0.05);
-}
-
 /* СЕТКА ТОВАРОВ: 5 КОЛОНОК */
 .products-grid {
   display: grid;
@@ -1873,7 +1858,6 @@ button:focus-visible {
 .catalog-top-bar { padding: 20px 24px; border-radius: 18px; background: linear-gradient(120deg, #24572c, #397443); box-shadow: 0 7px 20px rgba(33, 79, 40, 0.12); }
 .catalog-top-bar .catalog-heading { color: #fff9e7; }
 .catalog-top-bar .catalog-line { background-color: #d5e6c0; opacity: 0.55; }
-.catalog-intro { margin-top: 0; }
 .product-card-box { border-color: #d3dfc9; background: linear-gradient(#fff, #f7faf3); }
 .product-card-box:hover, .product-card-box:focus-within { border-color: #8ba875; }
 .btn-composition { background-color: var(--brand-green); box-shadow: 0 2px 6px rgba(33, 79, 40, 0.18); }

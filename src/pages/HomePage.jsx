@@ -53,8 +53,6 @@ export default function HomePage() {
             <h2 className="catalog-heading">{lang === 'EN' ? "Our products" : isRu ? "Каталог товаров" : "Өнімдер каталогы"}</h2>
             <div className="catalog-line"></div>
           </div>
-
-          <p className="catalog-intro">{lang === 'EN' ? 'Solonich sauerkraut, salted cucumbers, Korean-style carrots, adjika and vegetable salads — made in Almaty. Explore ingredients and nutrition for every product.' : isRu ? 'Квашеная капуста, солёные огурцы, морковь по-корейски, аджика и овощные салаты «Солёныч» — производство в Алматы. Выберите продукт, чтобы узнать состав и пищевую ценность.' : '«Солёныч» ашытылған қырыққабаты, тұздалған қияр, корейше сәбіз, аджика және көкөніс салаттары Алматыда өндіріледі. Өнімнің құрамы мен тағамдық құндылығын қараңыз.'}</p>
           {loading && <p>{lang === 'EN' ? 'Loading products…' : isRu ? 'Загрузка товаров…' : 'Өнімдер жүктелуде…'}</p>}
           {error && <p role="alert">{error}</p>}
           <div className="catalog-filters" role="group" aria-label={lang === 'EN' ? 'Product categories' : isRu ? 'Категории товаров' : 'Өнім санаттары'}>{[['all','Все','Барлығы','All'],['cabbage','Капуста','Қырыққабат','Cabbage'],['snacks','Закуски','Тіскебасарлар','Snacks'],['pickles','Соленья','Тұздалған өнімдер','Pickles']].map(([id,ru,kz,en])=><button key={id} type="button" aria-pressed={category===id} className={category===id?'active':''} onClick={()=>setCategory(id)}>{lang==='EN'?en:isRu?ru:kz}</button>)}</div>
