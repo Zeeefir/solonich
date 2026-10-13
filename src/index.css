@@ -1889,3 +1889,25 @@ button:focus-visible {
     gap: 20px;
   }
 }
+
+/* Keep full product photos in proportion on tablets and desktop screens. */
+@media (min-width: 701px) {
+  .product-page-container {
+    width: 92%;
+    max-width: 1260px;
+  }
+
+  .product-detail-media {
+    height: auto !important;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
+  }
+
+  .product-detail-media img {
+    position: static;
+    height: auto !important;
+    max-height: 760px;
+    object-fit: contain !important;
+  }
+}
