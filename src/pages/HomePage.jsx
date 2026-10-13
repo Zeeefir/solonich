@@ -7,6 +7,8 @@ export default function HomePage() {
   const lang = useLanguage();
   const isRu = lang === 'RU';
   const { products: productsData, loading, error } = useSiteData();
+  const cabbage = productsData.filter(product => /капуст|пелюст/i.test(product.title));
+  const snacks = productsData.filter(product => !/капуст|пелюст/i.test(product.title));
   const partners = [
     lang === 'EN' ? 'MAGNUM' : 'МАГНУМ',
     'ADK',
@@ -27,7 +29,7 @@ export default function HomePage() {
             {lang === 'EN' ? <>Traditional homemade pickles<br />made with fresh vegetables</> : isRu ? <>Настоящие домашние соленья<br />из свежайших овощей</> : <>Балғын көкөністерден<br />үйдегідей дайындалған тұздалған өнімдер</>}
           </p>
           <p className="anniversary-caption">{lang === 'EN' ? '10 years of flavour and tradition — thank you for being with us!' : isRu ? '10 лет вкуса и традиций — спасибо, что вы с нами!' : '10 жылдық дәм мен дәстүр — бізбен бірге болғандарыңызға рақмет!'}</p>
-          <a href="#catalog" className="btn-to-catalog">
+          <a href="#catalog" className="btn-to-catalog" onClick={event => { event.preventDefault(); document.getElementById('catalog')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); }}>
             {lang === 'EN' ? "VIEW PRODUCTS" : isRu ? "В КАТАЛОГ" : "КАТАЛОГҚА"}
           </a>
         </div>
@@ -50,13 +52,9 @@ export default function HomePage() {
           </div>
 
           <p className="catalog-intro">{lang === 'EN' ? 'Solonich sauerkraut, salted cucumbers, Korean-style carrots, adjika and vegetable salads — made in Almaty. Explore ingredients and nutrition for every product.' : isRu ? 'Квашеная капуста, солёные огурцы, морковь по-корейски, аджика и овощные салаты «Солёныч» — производство в Алматы. Выберите продукт, чтобы узнать состав и пищевую ценность.' : '«Солёныч» ашытылған қырыққабаты, тұздалған қияр, корейше сәбіз, аджика және көкөніс салаттары Алматыда өндіріледі. Өнімнің құрамы мен тағамдық құндылығын қараңыз.'}</p>
-          <div className="products-grid">
-            {loading && <p>{lang === 'EN' ? 'Loading products…' : isRu ? 'Загрузка товаров…' : 'Өнімдер жүктелуде…'}</p>}
-            {error && <p role="alert">{error}</p>}
-            {productsData.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+          {loading && <p>{lang === 'EN' ? 'Loading products…' : isRu ? 'Загрузка товаров…' : 'Өнімдер жүктелуде…'}</p>}
+          {error && <p role="alert">{error}</p>}
+          {[{title:lang === 'EN' ? 'Cabbage' : isRu ? 'Капуста' : 'Қырыққабат',items:cabbage},{title:lang === 'EN' ? 'Snacks and pickles' : isRu ? 'Закуски и соленья' : 'Тіскебасарлар мен тұздалған өнімдер',items:snacks}].filter(group=>group.items.length).map(group=><div className="catalog-category" key={group.title}><h3 className="catalog-category-title">{group.title}</h3><div className="products-grid">{group.items.map(product=><ProductCard key={product.id} product={product}/>)}</div></div>)}
         </div>
       </section>
 

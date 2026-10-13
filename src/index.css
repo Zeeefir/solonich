@@ -431,7 +431,7 @@ section, footer {
 /* СЕТКА ТОВАРОВ: 5 КОЛОНОК */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -1843,3 +1843,7 @@ button:focus-visible {
   .anniversary-star { font-size: 1rem; }
   .anniversary-caption { font-size: 0.82rem; }
 }
+
+.catalog-category + .catalog-category { margin-top: 36px; }
+.catalog-category-title { font-size: 1.25rem; color: #35602c; margin-bottom: 18px; font-weight: 800; }
+.hero-banner { padding-bottom: 64px; }
