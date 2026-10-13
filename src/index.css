@@ -74,7 +74,7 @@ section, footer {
   width: auto;
   object-fit: contain;
   margin: 0 0 -40px;
-  filter: drop-shadow(0 4px 6px rgba(58, 39, 22, 0.12));
+  filter: drop-shadow(0 0 1px rgba(76, 64, 45, 0.65)) drop-shadow(0 5px 3px rgba(58, 39, 22, 0.25));
   transition: transform 0.2s ease;
 }
 
@@ -1231,7 +1231,7 @@ section, footer {
   letter-spacing: 0.5px;
 }
 
-.footer-logo-img { display: block; width: 110px; height: auto; }
+.footer-logo-img { display: block; width: 110px; height: auto; filter: drop-shadow(0 0 1px rgba(76, 64, 45, 0.65)) drop-shadow(0 5px 3px rgba(0, 0, 0, 0.25)); }
 
 .footer-right-text {
   font-style: italic;
