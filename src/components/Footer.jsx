@@ -2,7 +2,7 @@ import useLanguage from '../useLanguage';
 import { Link } from 'react-router-dom';
 import { backendEnabled } from '../SiteData';
 
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, UserRound, ArrowRight } from 'lucide-react';
 
 export default function Footer() {
   const lang = useLanguage();
@@ -60,7 +60,7 @@ export default function Footer() {
 
           <div className="footer-right-text">
             {lang === 'EN' ? "* Traditional homemade pickles made with fresh vegetables" : isRu ? "* Настоящие домашние соленья из свежайших овощей" : "* Балғын көкөністерден үйдегідей дайындалған тұздалған өнімдер"}
-            {backendEnabled && <Link to="/profile" className="footer-account-link">{lang === 'EN' ? 'Administrator' : isRu ? 'Администратор' : 'Әкімші'}</Link>}
+            {backendEnabled && <Link to="/profile" className="footer-account-link"><UserRound size={18} aria-hidden="true" /><span>{lang === 'EN' ? 'Administrator sign in' : isRu ? 'Войти в профиль' : 'Профильге кіру'}</span><ArrowRight size={18} aria-hidden="true" /></Link>}
           </div>
         </div>
         <p className="footer-credit">GitHub · <span>Zeeefir</span></p>
