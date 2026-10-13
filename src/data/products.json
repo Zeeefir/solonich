@@ -145,8 +145,8 @@
   },
   {
     "id": 7,
-    "title": "Пелюстка квашенная со свеклой острая",
-    "titleKz": "Қызылша қосылған ащы ашытылған «Пелюстка» қырыққабаты",
+    "title": "Капуста квашеная со свёклой",
+    "titleKz": "Қызылша қосылған ашытылған қырыққабат",
     "weight": "850 г",
     "badge": "ОСТРОЕ",
     "image": "/products/beetroot_petal.JPG",
@@ -164,7 +164,7 @@
       "humidity": "не более 85%",
       "shelfLife": "90 дней"
     },
-    "titleEn": "Spicy Pelyustka cabbage with beetroot",
+    "titleEn": "Sauerkraut with beetroot",
     "compositionEn": "white cabbage, fresh beetroot, chilli peppers, salt, spices, sodium benzoate."
   },
   {
