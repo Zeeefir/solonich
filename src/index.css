@@ -1907,7 +1907,7 @@ button:focus-visible {
   .product-detail-media img {
     position: static;
     height: auto !important;
-    max-height: 760px;
+    max-height: none;
     object-fit: contain !important;
   }
 }
