@@ -1868,3 +1868,22 @@ button:focus-visible {
 
 .header-account-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 14px; border: 1px solid #aec498; border-radius: 12px; color: #28572c; background: #f6f9ef; font-size: .82rem; font-weight: 700; text-decoration: none; }
 @media(max-width:700px) { .is-menu-open .header-account-link { flex: 1; } }
+
+/* Give wide desktop displays larger cards and smaller side margins. */
+@media (min-width: 1440px) {
+  .header-inner,
+  .catalog-container,
+  .about-container,
+  .advantages-overlay,
+  .footer-container {
+    max-width: clamp(1140px, 84vw, 1600px);
+  }
+
+  .product-page-container {
+    max-width: clamp(1100px, 80vw, 1440px);
+  }
+
+  .products-grid {
+    gap: 20px;
+  }
+}
