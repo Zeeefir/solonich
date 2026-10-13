@@ -11,10 +11,14 @@ import AdminPage from './pages/AdminPage';
 import Seo from './components/Seo';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (pathname === '/' && hash === '#catalog') {
+      const frame = requestAnimationFrame(() => document.getElementById('catalog')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' }));
+      return () => cancelAnimationFrame(frame);
+    }
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 

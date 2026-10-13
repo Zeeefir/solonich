@@ -41,10 +41,6 @@ export default function ProductPage() {
 
   return (
     <div className="product-page-container">
-      <Link to="/" className="back-link">
-        <ArrowLeft size={18} />
-        <span>{lang === 'EN' ? "Back to products" : isRu ? 'Назад в каталог' : 'Каталогқа оралу'}</span>
-      </Link>
 
       <div className="product-detail-card">
         
@@ -178,7 +174,7 @@ export default function ProductPage() {
 
           <div style={{ marginTop: '24px' }}>
             <Link 
-              to="/" 
+              to="/#catalog"
               className="btn-to-main"
               style={{ 
                 display: 'flex', 
@@ -198,7 +194,7 @@ export default function ProductPage() {
                 transition: 'background 0.2s'
               }}
             >
-              <Home size={18} /> {lang === 'EN' ? "Home" : isRu ? 'На главную' : 'Басты бетке'}
+              <ArrowLeft size={18} /> {lang === 'EN' ? "Back to products" : isRu ? 'Назад в каталог' : 'Каталогқа оралу'}
             </Link>
           </div>
         </div>
