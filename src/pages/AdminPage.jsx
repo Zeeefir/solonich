@@ -4,6 +4,7 @@ import { api, useSiteData, backendEnabled } from '../SiteData';
 import useLanguage from '../useLanguage';
 import './Management.css';
 import { localizeError } from '../translations';
+import { LogIn, ShieldCheck } from 'lucide-react';
 
 const emptyProduct = () => ({ title:'',titleKz:'',titleEn:'',compositionRu:'',compositionKz:'',compositionEn:'',weight:'',image:'',badge:'',nutrition:{proteins:'',fats:'',carbs:'',calories:'',kJ:''},storage:{temp:'от -1°С до +4°С',humidity:'не более 85%',shelfLife:''} });
 export default function AdminPage() {
@@ -30,7 +31,7 @@ export default function AdminPage() {
  };
  if (!backendEnabled) return <section className="management-page"><h1>{t('Управление товарами доступно локально','Өнімдерді басқару жергілікті нұсқада қолжетімді','Product management is available in the local version')}</h1><Link to="/">{t('На главную','Басты бетке','Home')}</Link></section>;
  if (loading) return <section className="management-page">{t('Загрузка…','Жүктелуде…','Loading…')}</section>;
- if (!user || user.role !== 'admin') return <section className="management-page"><h1>{t('Доступ для администратора','Әкімшіге қолжетімді','Administrator access')}</h1><p>{dataError}</p><Link to="/profile">{t('Войти в профиль','Жеке кабинетке кіру','Sign in')}</Link></section>;
+ if (!user || user.role !== 'admin') return <section className="management-page"><div className="account-panel admin-access-panel"><ShieldCheck className="admin-access-icon" size={36} aria-hidden="true" /><h1>{t('Доступ для администратора','Әкімшіге қолжетімді','Administrator access')}</h1><p>{t('Войдите в аккаунт владельца, чтобы управлять каталогом.','Каталогты басқару үшін иесінің аккаунтына кіріңіз.','Sign in to the owner account to manage the catalog.')}</p>{dataError && <p role="alert">{dataError}</p>}<Link to="/profile" className="management-primary"><LogIn size={20} aria-hidden="true" />{t('Войти в профиль','Жеке кабинетке кіру','Sign in')}</Link></div></section>;
  const textFields=[['title','Название RU','Атауы RU','Name RU'],['titleKz','Название KZ','Атауы KZ','Name KZ'],['titleEn','Название EN','Атауы EN','Name EN'],['weight','Вес (например, 500 г)','Салмағы (мысалы, 500 г)','Weight (e.g. 500 г)'],['image','Фото: /products/photo.jpg или HTTPS-ссылка','Фото: /products/photo.jpg немесе HTTPS-сілтеме','Image: /products/photo.jpg or HTTPS URL']];
  return <section className="management-page admin-page">
   <Link className="back-link" to="/profile">← {t('Мой профиль','Жеке кабинет','My account')}</Link>

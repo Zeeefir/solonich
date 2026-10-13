@@ -39,3 +39,8 @@
 }
 .account-panel .management-primary:hover:not(:disabled) { background: #214d2a; }
 .account-panel .management-primary:focus-visible { outline: 3px solid #a3bf8a; outline-offset: 3px; }
+
+.admin-access-panel { text-align: center; }
+.admin-access-icon { color: #35643b; margin-bottom: 16px; }
+.admin-access-panel p { color: #65584c; }
+.admin-access-panel .management-primary { gap: 10px; }
