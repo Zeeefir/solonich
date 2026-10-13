@@ -2,13 +2,13 @@
 @media (prefers-reduced-motion: no-preference) {
   .scroll-pending {
     opacity: 0;
-    translate: 0 24px;
+    translate: 0 18px;
   }
 
   .scroll-pending.scroll-arrived {
     opacity: 1;
     translate: 0 0;
-    transition: opacity 650ms ease, translate 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition: opacity 700ms ease, translate 800ms cubic-bezier(0.16, 1, 0.3, 1), transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
     transition-delay: var(--arrival-delay, 0ms);
   }
 
@@ -18,12 +18,33 @@
   }
 
   .scroll-arrived .adv-icon-badge {
-    animation: icon-settle 750ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation: icon-settle 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-delay: var(--arrival-delay, 0ms);
+  }
+
+  .hero-main-title { animation: gentle-arrival 750ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .hero-subtext { animation: gentle-arrival 750ms 120ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .hero-center-content .btn-to-catalog { animation: gentle-arrival 750ms 220ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .product-detail-content { animation: gentle-arrival 650ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+  .product-card-box { transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease; }
+  .btn-composition, .btn-to-main { transition: transform 180ms ease, background-color 250ms ease, box-shadow 250ms ease; }
+  .btn-composition:active, .btn-to-main:active, .social-header-btn:active { transform: scale(0.98); }
+
+  @media (hover: hover) and (pointer: fine) {
+    .product-card-box:hover { transform: translateY(-4px); }
+    .btn-composition:hover, .btn-to-main:hover { box-shadow: 0 5px 14px rgba(150, 29, 29, 0.18); }
+    .adv-card .adv-icon-badge { transition: translate 300ms ease; }
+    .adv-card:hover .adv-icon-badge { translate: 0 -4px; }
   }
 }
 
+@keyframes gentle-arrival {
+  from { opacity: 0; translate: 0 12px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
 @keyframes icon-settle {
-  from { transform: scale(0.88) rotate(-6deg); }
+  from { transform: scale(0.94) rotate(-3deg); }
   to { transform: scale(1) rotate(0); }
 }
