@@ -2087,18 +2087,19 @@ button:focus-visible {
 }
 @media (prefers-reduced-motion: no-preference) {
   .anniversary-badge {
-    animation: anniversary-scroll-open 1.65s .15s cubic-bezier(.22, 1, .36, 1) both;
+    transform-origin: center;
+    animation: anniversary-scroll-open 1.25s .12s cubic-bezier(.25, .8, .25, 1) both;
   }
   .anniversary-number,
   .anniversary-years,
   .anniversary-star {
-    animation: anniversary-ink-appear .55s .65s ease-out both;
+    animation: anniversary-ink-appear .5s 1.15s ease-out both;
   }
 }
 @keyframes anniversary-scroll-open {
-  0% { clip-path: inset(0 48% 0 48% round 18px); opacity: 0; }
-  12% { clip-path: inset(0 48% 0 48% round 18px); opacity: 1; }
-  100% { clip-path: inset(-20px -30px -20px -30px round 18px); opacity: 1; }
+  0% { transform: scaleX(.08); opacity: 0; }
+  15% { transform: scaleX(.08); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 1; }
 }
 @keyframes anniversary-ink-appear {
   from { opacity: 0; }
