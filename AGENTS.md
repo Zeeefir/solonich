@@ -9,3 +9,5 @@ The user requests storing every newly created credential in the ignored local `d
 The brand's Latin spelling is Solonich.
 
 The user now wants only owner administration of the online catalog. Public registration, customer profiles, reviews and visitor statistics are cancelled. Keep the confirmed owner's account and product management, with access enforced in Supabase. Do not reactivate cancelled features unless requested.
+
+The user additionally approved a second catalog administrator, 3kuku66qq@gmail.com. Catalog access is restricted to the two approved confirmed accounts by Supabase migration 004. Public signup remains disabled.
