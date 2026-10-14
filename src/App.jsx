@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useLayoutEffect, useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 import Header from './components/HeaderMenu';
@@ -11,14 +11,25 @@ import AdminPage from './pages/AdminPage';
 import Seo from './components/Seo';
 
 function ScrollToTop() {
-  const { pathname, hash } = useLocation();
-  useEffect(() => {
+  const { pathname, hash, search } = useLocation();
+  const navigate = useNavigate();
+  const firstVisit = useRef(true);
+  useLayoutEffect(() => {
+    if (firstVisit.current) {
+      firstVisit.current = false;
+      window.history.scrollRestoration = 'manual';
+      if (pathname === '/') {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        if (hash) navigate({ pathname, search }, { replace: true });
+        return;
+      }
+    }
     if (pathname === '/' && hash === '#catalog') {
       const frame = requestAnimationFrame(() => document.getElementById('catalog')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' }));
       return () => cancelAnimationFrame(frame);
     }
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  }, [pathname, hash]);
+  }, [pathname, hash, search, navigate]);
   return null;
 }
 
