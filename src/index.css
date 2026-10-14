@@ -1981,3 +1981,24 @@ button:focus-visible {
     background-size: 560px 374px;
   }
 }
+
+@media (min-width: 1440px) {
+  .nav-item-link {
+    font-size: 1.05rem;
+    padding: 15px 16px;
+    min-height: 54px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .pill-bg-indicator { height: 54px; border-radius: 15px; }
+  .lang-dropdown-btn,
+  .social-header-btn {
+    font-size: 1rem;
+    min-height: 54px;
+    padding: 13px 17px;
+    border-radius: 15px;
+    gap: 9px;
+  }
+  .social-header-btn svg,
+  .lang-globe-icon { width: 22px; height: 22px; }
+}
