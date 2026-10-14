@@ -2052,3 +2052,28 @@ button:focus-visible {
   .anniversary-badge::before,
   .anniversary-badge::after { width: 22px; height: 48px; }
 }
+
+/* A restrained anniversary ribbon, without bulky bow loops. */
+.anniversary-bow-loop { display: none; }
+.anniversary-badge {
+  border-radius: 22px;
+  border: 1px solid #d6b576;
+  background: linear-gradient(135deg, #fff7e4, #f1ddb2);
+  box-shadow: 0 8px 22px rgba(91, 47, 29, .16), inset 0 0 0 5px rgba(255, 250, 234, .45);
+}
+.anniversary-badge::before,
+.anniversary-badge::after {
+  top: 50%;
+  width: 24px;
+  height: 52px;
+  background: #963d32;
+  transform: translateY(-50%);
+}
+.anniversary-badge::before { left: -14px; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 30% 50%); }
+.anniversary-badge::after { right: -14px; clip-path: polygon(0 0, 100% 0, 70% 50%, 100% 100%, 0 100%); }
+@media (max-width: 700px) {
+  .anniversary-badge::before,
+  .anniversary-badge::after { width: 18px; height: 40px; }
+  .anniversary-badge::before { left: -10px; }
+  .anniversary-badge::after { right: -10px; }
+}
