@@ -1584,6 +1584,11 @@ button:focus-visible {
 
   .is-menu-open .header-nav {
     display: grid;
+    padding-top: 12px;
+  }
+
+  .is-menu-open .logo-img {
+    margin-bottom: 0;
   }
 
   .pill-bg-indicator {
