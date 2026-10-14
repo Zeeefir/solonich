@@ -2020,3 +2020,31 @@ button:focus-visible {
   .social-header-btn svg,
   .lang-globe-icon { width: 22px; height: 22px; }
 }
+
+/* A gift bow behind the anniversary ribbon. */
+.anniversary-badge { isolation: isolate; }
+.anniversary-bow-loop {
+  position: absolute;
+  top: 50%;
+  width: 54px;
+  height: 96px;
+  z-index: -1;
+  background: linear-gradient(120deg, #bd6652, #963d32 55%, #6f2822);
+  border: 1px solid #813028;
+  box-shadow: inset 0 0 0 5px rgba(255, 219, 163, .12), 0 4px 8px rgba(78, 36, 25, .14);
+  pointer-events: none;
+}
+.anniversary-bow-left { left: -32px; border-radius: 28px 6px 6px 28px; transform: translateY(-50%) rotate(-10deg); }
+.anniversary-bow-right { right: -32px; border-radius: 6px 28px 28px 6px; transform: translateY(-50%) rotate(10deg); }
+.anniversary-badge::before,
+.anniversary-badge::after { top: 66%; width: 30px; height: 72px; background: linear-gradient(#963d32, #7d3029); }
+.anniversary-badge::before { left: -12px; transform: rotate(16deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%); }
+.anniversary-badge::after { right: -12px; transform: rotate(-16deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%); }
+@media (max-width: 700px) {
+  .anniversary-badge { max-width: calc(100% - 40px); margin-bottom: 36px; }
+  .anniversary-bow-loop { width: 34px; height: 70px; }
+  .anniversary-bow-left { left: -20px; }
+  .anniversary-bow-right { right: -20px; }
+  .anniversary-badge::before,
+  .anniversary-badge::after { width: 22px; height: 48px; }
+}

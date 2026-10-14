@@ -24,7 +24,7 @@ export default function HomePage() {
       {/* 1. БАННЕР HERO */}
       <section className="hero-banner">
         <div className="hero-center-content">
-          <div className="anniversary-badge"><span className="anniversary-star" aria-hidden="true">✦</span><span className="anniversary-number">10</span><span className="anniversary-years">{lang === 'EN' ? 'YEARS' : isRu ? 'ЛЕТ' : 'ЖЫЛ'}<small>{lang === 'EN' ? 'TOGETHER' : isRu ? 'ВМЕСТЕ С ВАМИ' : 'СІЗДЕРМЕН БІРГЕ'}</small></span><span className="anniversary-star" aria-hidden="true">✦</span></div>
+          <div className="anniversary-badge"><span className="anniversary-bow-loop anniversary-bow-left" aria-hidden="true" /><span className="anniversary-bow-loop anniversary-bow-right" aria-hidden="true" /><span className="anniversary-star" aria-hidden="true">✦</span><span className="anniversary-number">10</span><span className="anniversary-years">{lang === 'EN' ? 'YEARS' : isRu ? 'ЛЕТ' : 'ЖЫЛ'}<small>{lang === 'EN' ? 'TOGETHER' : isRu ? 'ВМЕСТЕ С ВАМИ' : 'СІЗДЕРМЕН БІРГЕ'}</small></span><span className="anniversary-star" aria-hidden="true">✦</span></div>
           <h1 className="hero-main-title">
             {lang === 'EN' ? <>REVIVING TIME-HONOURED<br />FLAVOURS</> : isRu ? <>ВОЗРОЖДАЯ ЗАБЫТЫЕ<br />ТРАДИЦИИ ВКУСА</> : <>ҰМЫТЫЛҒАН ДӘМ<br />ДӘСТҮРЛЕРІН ЖАҢҒЫРТАМЫЗ</>}
           </h1>
