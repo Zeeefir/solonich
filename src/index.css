@@ -1809,33 +1809,33 @@ button:focus-visible {
   gap: 20px;
   margin: 16px 0 28px;
   padding: 20px 38px;
-  border: 2px solid #c29136;
-  border-radius: 28px;
-  background: linear-gradient(135deg, #ffe7a2 0%, #f6ce71 50%, #efbb55 100%);
+  border: 1px solid #d8b777;
+  border-radius: 18px;
+  background: linear-gradient(110deg, #fffaf0, #f6e9cd);
   color: #792e26;
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.1em;
-  box-shadow: 0 10px 28px rgba(122, 71, 25, 0.24), inset 0 0 0 5px rgba(255, 245, 200, 0.55), inset 0 0 0 6px rgba(154, 92, 33, 0.3);
+  box-shadow: 0 10px 24px rgba(91, 47, 29, 0.18), inset 7px 0 #963d32, inset -7px 0 #963d32;
 }
 
 .anniversary-badge::before,
 .anniversary-badge::after {
-  content: '✦';
+  content: '';
   position: absolute;
-  color: #a33d30;
-  font-size: 24px;
-  line-height: 1;
-  text-shadow: 0 1px 0 #fff3cf;
+  width: 26px;
+  height: 62px;
+  background: #963d32;
+  z-index: -1;
   pointer-events: none;
 }
-.anniversary-badge::before { top: -13px; left: 24px; transform: rotate(-12deg); }
-.anniversary-badge::after { bottom: -12px; right: 26px; font-size: 20px; transform: rotate(12deg); }
+.anniversary-badge::before { top: 50%; left: -16px; transform: translateY(-50%); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 30% 50%); }
+.anniversary-badge::after { top: 50%; right: -16px; transform: translateY(-50%); clip-path: polygon(0 0, 100% 0, 70% 50%, 100% 100%, 0 100%); }
 
 .anniversary-number { font-size: clamp(5rem, 10vw, 8rem); line-height: 0.9; font-weight: 900; letter-spacing: -0.07em; color: #963d32; text-shadow: 0 2px 0 rgba(255, 255, 255, 0.65); }
 .anniversary-years { display: flex; flex-direction: column; gap: 10px; text-align: left; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1; letter-spacing: 0.06em; }
 .anniversary-years small { max-width: 15ch; font-size: 0.72rem; line-height: 1.4; letter-spacing: 0.1em; }
-.anniversary-star { font-size: 1.7rem; color: #963d32; }
+.anniversary-star { font-size: 1.7rem; color: #b98b36; }
 
 .anniversary-caption {
   margin: -4px auto 18px;
