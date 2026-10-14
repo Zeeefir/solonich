@@ -2077,3 +2077,30 @@ button:focus-visible {
   .anniversary-badge::before { left: -10px; }
   .anniversary-badge::after { right: -10px; }
 }
+
+/* Restore the light anniversary ribbon and reveal it from the center. */
+.anniversary-badge {
+  border-radius: 18px;
+  border: 1px solid #d8b777;
+  background: linear-gradient(110deg, #fffaf0, #f6e9cd);
+  box-shadow: 0 10px 24px rgba(91, 47, 29, .18), inset 7px 0 #963d32, inset -7px 0 #963d32;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .anniversary-badge {
+    animation: anniversary-scroll-open 1.65s .15s cubic-bezier(.22, 1, .36, 1) both;
+  }
+  .anniversary-number,
+  .anniversary-years,
+  .anniversary-star {
+    animation: anniversary-ink-appear .55s .65s ease-out both;
+  }
+}
+@keyframes anniversary-scroll-open {
+  0% { clip-path: inset(0 48% 0 48% round 18px); opacity: 0; }
+  12% { clip-path: inset(0 48% 0 48% round 18px); opacity: 1; }
+  100% { clip-path: inset(-20px -30px -20px -30px round 18px); opacity: 1; }
+}
+@keyframes anniversary-ink-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
