@@ -162,7 +162,7 @@ export default function ProductPage() {
               <div className="storage-grid">
                 <div style={{ background: '#faf8f5', border: '1px solid #ebdcc7', borderRadius: '12px', padding: '10px 12px', flex: 1 }}>
                   <span style={{ fontWeight: '800', color: '#2b1f17', display: 'block', marginBottom: '2px' }}>{lang === 'EN' ? "Storage:" : isRu ? 'Хранение:' : 'Сақтау:'}</span>
-                  <span style={{ color: '#5a4b40' }}>t {lang === 'EN' ? storage.temp.replace(/^от (.+) до (.+)$/, '$1 to $2') : isRu ? storage.temp : storage.temp.replace(/^от (.+) до (.+)$/, '$1-тан $2-қа дейін')}, {lang === 'EN' ? "humidity" : isRu ? 'влажность' : 'ылғалдылық'} {lang === 'EN' ? storage.humidity.replace('не более', 'up to') : isRu ? storage.humidity : storage.humidity.replace(/^не более (.+)$/, '$1-дан аспайды')}</span>
+                  <span style={{ color: '#5a4b40' }}>t {lang === 'EN' ? storage.temp.replace(/^от (.+) до (.+)$/, '$1 to $2') : isRu ? storage.temp : (storage.tempKz || storage.temp.replace(/^от (.+) до (.+)$/, '$1-тан $2-қа дейін'))}, {lang === 'EN' ? "humidity" : isRu ? 'влажность' : 'ылғалдылық'} {lang === 'EN' ? storage.humidity.replace('не более', 'up to') : isRu ? storage.humidity : storage.humidity.replace(/^не более (.+)$/, '$1-дан аспайды')}</span>
                 </div>
                 <div style={{ background: '#faf8f5', border: '1px solid #ebdcc7', borderRadius: '12px', padding: '10px 12px', flex: 1 }}>
                   <span style={{ fontWeight: '800', color: '#2b1f17', display: 'block', marginBottom: '2px' }}>{lang === 'EN' ? "Shelf life:" : isRu ? 'Срок годности:' : 'Жарамдылық мерзімі:'}</span>

@@ -1,27 +1,28 @@
 [
   {
     "id": 1,
-    "title": "Морковка по-корейски",
-    "titleKz": "Корейше дайындалған сәбіз",
-    "weight": "500 г",
+    "title": "Морковь по-корейски",
+    "titleKz": "Корейше сәбіз",
+    "weight": "450 г",
     "badge": null,
     "image": "/products/carrot.JPG",
-    "compositionRu": "морковь свежая, чеснок, специи, масло подсолнечное, уксус, соль.",
-    "compositionKz": "сәбіз, сарымсақ, дәмдеуіштер, күнбағыс майы, сірке суы, тұз.",
+    "compositionRu": "морковь, масло растительное, перец чили, специи, соль, бензоат натрия, лук, сахар, уксус.",
+    "compositionKz": "сәбіз, өсімдік майы, чили бұрышы, тұз, қант, сірке суы, пияз.",
     "nutrition": {
-      "proteins": "1,1 г",
-      "fats": "4,2 г",
-      "carbs": "7,5 г",
-      "calories": "72 ккал",
-      "kJ": "301 кДж"
+      "proteins": "1,2 г",
+      "fats": "8,2 г",
+      "carbs": "9,0 г",
+      "calories": "112,6 ккал",
+      "kJ": "450,4 кДж"
     },
     "storage": {
       "temp": "от -1°С до +4°С",
+      "tempKz": "+1°C-тан +4°C-қа дейін",
       "humidity": "не более 85%",
-      "shelfLife": "60 дней"
+      "shelfLife": "90 дней"
     },
     "titleEn": "Korean-style carrots",
-    "compositionEn": "fresh carrots, garlic, spices, sunflower oil, vinegar, salt."
+    "compositionEn": "carrots, vegetable oil, chilli pepper, spices, salt, sodium benzoate, onions, sugar, vinegar."
   },
   {
     "id": 2,
