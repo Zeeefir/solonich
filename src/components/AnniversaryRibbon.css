@@ -87,3 +87,16 @@
   .anniversary-ribbon::before { left: -16px; width: 28px; }
   .anniversary-ribbon::after { right: -16px; width: 28px; }
 }
+
+/* Rounded fabric turns at the existing joins. */
+.anniversary-ribbon { border-radius: 12px; }
+.anniversary-ribbon::before {
+  border-radius: 0 18px 18px 0;
+  background: linear-gradient(90deg, #a54b3b 35%, #7b3028 68%, #ad5540 88%, #d1855b);
+  box-shadow: inset -7px 0 9px -5px #f4c48866;
+}
+.anniversary-ribbon::after {
+  border-radius: 18px 0 0 18px;
+  background: linear-gradient(270deg, #a54b3b 35%, #7b3028 68%, #ad5540 88%, #d1855b);
+  box-shadow: inset 7px 0 9px -5px #f4c48866;
+}
