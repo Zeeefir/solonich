@@ -1,0 +1,89 @@
+.main-container .hero-banner {
+  flex-direction: column;
+  padding-inline: 0;
+}
+.hero-banner .hero-center-content { padding-inline: 20px; }
+.anniversary-ribbon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 3vw, 44px);
+  width: 100%;
+  min-height: 52px;
+  margin: 12px 0 36px;
+  padding: 10px 18px;
+  color: #fff0ce;
+  background: linear-gradient(100deg, #782e29, #a44737 48%, #782e29);
+  border-block: 1px solid #d7b56e;
+  box-shadow: 0 4px 14px rgba(79, 37, 24, .15), inset 0 3px rgba(255, 229, 173, .09), inset 0 -3px rgba(255, 229, 173, .09);
+}
+.anniversary-ribbon p {
+  margin: 0;
+  font-size: clamp(16px, 1.2vw, 23px);
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+  letter-spacing: .025em;
+}
+.anniversary-ribbon strong { color: #ffe2a0; font-weight: 850; }
+.anniversary-ribbon > span { color: #e2bd73; font-size: 17px; flex-shrink: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .anniversary-ribbon { animation: ribbon-draw-across 1.5s .15s cubic-bezier(.22, .65, .3, 1) both; }
+  .anniversary-ribbon p { animation: ribbon-message-appear .45s .85s ease-out both; }
+}
+@keyframes ribbon-draw-across {
+  from { clip-path: inset(-20px 100% -20px 0); }
+  to { clip-path: inset(-20px 0 -20px 0); }
+}
+@keyframes ribbon-message-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (max-width: 700px) {
+  .anniversary-ribbon { min-height: 46px; margin: 0 0 28px; padding: 10px 12px; }
+  .hero-banner .hero-center-content { padding-inline: 16px; }
+}
+
+/* Satin folds and cut ends keep the anniversary strip light. */
+.anniversary-ribbon {
+  isolation: isolate;
+  width: calc(100% - 48px);
+  border-radius: 3px;
+  background:
+    linear-gradient(115deg, transparent 15%, rgba(255, 224, 170, .16) 30%, transparent 44%, rgba(255, 224, 170, .08) 70%, transparent 84%),
+    linear-gradient(180deg, #b85443 0%, #9f3f33 18%, #873027 60%, #a14535 91%, #bd6047 100%);
+  border-block: 1px solid #e1ba72;
+  box-shadow: 0 9px 16px -9px #52271c, inset 0 3px 0 #f2cd872b, inset 0 -3px 0 #f2cd872b;
+}
+.anniversary-ribbon::before,
+.anniversary-ribbon::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 9px;
+  bottom: -8px;
+  width: 42px;
+  background: linear-gradient(180deg, #ad5141, #762b25 62%, #a94b39);
+  border-block: 1px solid #c89c59;
+}
+.anniversary-ribbon::before {
+  left: -24px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 14% 50%);
+  box-shadow: inset -15px 0 12px -8px #3d1719;
+  transform: rotate(-2deg);
+}
+.anniversary-ribbon::after {
+  right: -24px;
+  clip-path: polygon(0 0, 100% 0, 86% 50%, 100% 100%, 0 100%);
+  box-shadow: inset 15px 0 12px -8px #3d1719;
+  transform: rotate(2deg);
+}
+.anniversary-ribbon > span { text-shadow: 0 1px 1px #60271d; }
+.anniversary-ribbon p { text-shadow: 0 1px 2px #53241c; }
+@media (max-width: 700px) {
+  .anniversary-ribbon { width: calc(100% - 32px); }
+  .anniversary-ribbon::before { left: -16px; width: 28px; }
+  .anniversary-ribbon::after { right: -16px; width: 28px; }
+}
