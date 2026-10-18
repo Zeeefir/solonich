@@ -87,32 +87,3 @@
   .anniversary-ribbon::before { left: -16px; width: 28px; }
   .anniversary-ribbon::after { right: -16px; width: 28px; }
 }
-
-/* Curved fabric silhouette, with light following the folds. */
-.anniversary-ribbon {
-  min-height: 78px;
-  padding-block: 22px;
-  border: 0;
-  border-radius: 0;
-  background: none;
-  box-shadow: none;
-  filter: drop-shadow(0 7px 5px #4d291c33);
-}
-.anniversary-ribbon::before {
-  inset: 0 -16px;
-  width: auto;
-  height: auto;
-  border: 0;
-  clip-path: none;
-  transform: none;
-  box-shadow: none;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 90' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='s' x2='0' y2='1'%3E%3Cstop stop-color='%23c76b52'/%3E%3Cstop offset='.22' stop-color='%23a44736'/%3E%3Cstop offset='.72' stop-color='%23812e28'/%3E%3Cstop offset='1' stop-color='%23be6046'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='%23752c26' d='M0 5 L75 19 L75 82 L0 69 L16 40 Z M1125 19 L1200 5 L1184 40 L1200 69 L1125 82 Z'/%3E%3Cpath fill='%235c211e' d='M45 8 L75 19 L75 82 L45 70 Z M1155 8 L1125 19 L1125 82 L1155 70 Z'/%3E%3Cpath fill='url(%23s)' stroke='%23dcb373' stroke-width='1' d='M45 8 C260 40 390 8 600 8 C810 8 940 40 1155 8 L1155 70 C940 102 810 70 600 70 C390 70 260 102 45 70 Z'/%3E%3Cpath fill='none' stroke='%23ffe0a4' stroke-opacity='.45' d='M49 13 C260 45 390 13 600 13 C810 13 940 45 1151 13 M49 65 C260 97 390 65 600 65 C810 65 940 97 1151 65'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
-}
-.anniversary-ribbon::after { content: none; }
-.anniversary-ribbon p,
-.anniversary-ribbon > span { position: relative; top: -5px; }
-@media (max-width: 700px) {
-  .anniversary-ribbon { min-height: 72px; padding: 20px 18px; gap: 10px; }
-  .anniversary-ribbon::before { inset: 0 -10px; width: auto; }
-  .anniversary-ribbon p { font-size: 15px; }
-}
