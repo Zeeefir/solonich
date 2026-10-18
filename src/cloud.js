@@ -18,7 +18,7 @@ export async function cloudApi(path, input, method) {
  if (path === '/me') return {user:await account()};
  if (path === '/login') { checked(await cloud.auth.signInWithPassword({email:input.email,password:input.password})); return {user:await account()}; }
  if (path === '/logout') { checked(await cloud.auth.signOut()); return {ok:true}; }
- if (path === '/products' && input === undefined) return checked(await cloud.from('products').select('id,content').order('id')).map(({id,content})=>({...content,id}));
+ if (path === '/products' && input === undefined) return checked(await cloud.from('products').select('id,content').order('id')).map(({id,content})=>({...content,id})).sort((a,b)=>(a.sortOrder ?? 0)-(b.sortOrder ?? 0)||a.id-b.id);
  if (path.startsWith('/products') && input !== undefined) {
   const id = Number(path.split('/')[2]);
   if (method === 'DELETE') { checked(await cloud.from('products').delete().eq('id',id)); return {ok:true}; }

@@ -1,5 +1,31 @@
 [
   {
+    "badge": null,
+    "image": "/products/classic-sauerkraut.jpg",
+    "title": "Капуста квашеная",
+    "weight": "850 г",
+    "storage": {
+      "temp": "от -1°С до +4°С",
+      "tempKz": "+1°C-тан +4°C-қа дейін",
+      "humidity": "не более 85%",
+      "shelfLife": "90 дней"
+    },
+    "titleEn": "Sauerkraut",
+    "titleKz": "Ашытылған қырыққабат",
+    "nutrition": {
+      "kJ": "92 кДж",
+      "fats": "—",
+      "carbs": "3,0 г",
+      "calories": "23 ккал",
+      "proteins": "1,8 г"
+    },
+    "sortOrder": -1,
+    "compositionEn": "white cabbage, carrots, sugar, salt, vinegar, sodium benzoate.",
+    "compositionKz": "ақ қырыққабат, сәбіз, қант, тұз, сірке суы, натрий бензоаты.",
+    "compositionRu": "белокочанная капуста, морковь, сахар, соль, уксус, бензоат натрия.",
+    "id": 13
+  },
+  {
     "id": 1,
     "title": "Морковь по-корейски",
     "titleKz": "Корейше сәбіз",
