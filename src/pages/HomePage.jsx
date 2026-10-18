@@ -2,6 +2,7 @@ import useLanguage from '../useLanguage';
 import { useState } from 'react';
 import { useSiteData } from '../SiteData';
 import ProductCard from '../components/ProductCard';
+import '../components/AnniversaryRibbon.css';
 import { Leaf, Award, Apple, Store, ShieldCheck } from 'lucide-react';
 
 export default function HomePage() {
@@ -23,8 +24,12 @@ export default function HomePage() {
     <main className="main-container">
       {/* 1. БАННЕР HERO */}
       <section className="hero-banner">
+        <div className="anniversary-ribbon">
+          <span aria-hidden="true">✦</span>
+          <p>{lang === 'EN' ? <>Celebrating <strong>10 years</strong> together</> : isRu ? <>Нам <strong>10 лет</strong> — вместе с вами!</> : <>Бізге <strong>10 жыл</strong> — сіздермен бірге!</>}</p>
+          <span aria-hidden="true">✦</span>
+        </div>
         <div className="hero-center-content">
-          <div className="anniversary-badge"><div className="anniversary-paper"><span className="anniversary-star" aria-hidden="true">✦</span><span className="anniversary-number">10</span><span className="anniversary-years">{lang === 'EN' ? 'YEARS' : isRu ? 'ЛЕТ' : 'ЖЫЛ'}<small>{lang === 'EN' ? 'TOGETHER' : isRu ? 'ВМЕСТЕ С ВАМИ' : 'СІЗДЕРМЕН БІРГЕ'}</small></span><span className="anniversary-star" aria-hidden="true">✦</span></div></div>
           <h1 className="hero-main-title">
             {lang === 'EN' ? <>REVIVING TIME-HONOURED<br />FLAVOURS</> : isRu ? <>ВОЗРОЖДАЯ ЗАБЫТЫЕ<br />ТРАДИЦИИ ВКУСА</> : <>ҰМЫТЫЛҒАН ДӘМ<br />ДӘСТҮРЛЕРІН ЖАҢҒЫРТАМЫЗ</>}
           </h1>
