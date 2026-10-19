@@ -6,12 +6,22 @@ const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_zjt
 export const cloudEnabled = Boolean(url && key);
 export const cloud = cloudEnabled ? createClient(url, key) : null;
 const checked = result => { if (result.error) throw result.error; return result.data; };
+// Keep in sync with the database allowlist in migration 004. RLS remains authoritative.
+const approvedAdministrators = new Map([
+ ['e1f33220-d4e1-4639-8d9d-07a70f1048e8', 'stasvisnakov15@gmail.com'],
+ ['48a8bce1-b831-4bcb-a5a1-07f58a139d44', '3kuku66qq@gmail.com'],
+]);
 async function account() {
  const session = checked(await cloud.auth.getSession())?.session;
  if (!session) return null;
  const authUser = checked(await cloud.auth.getUser())?.user;
  if (!authUser) return null;
+ if (!authUser.email_confirmed_at || approvedAdministrators.get(authUser.id) !== authUser.email?.toLowerCase()) {
+  checked(await cloud.auth.signOut({scope:'local'}));
+  return null;
+ }
  const profile = checked(await cloud.from('profiles').select('name,role').eq('id',authUser.id).single());
+ if (profile.role !== 'admin') return null;
  return {id:authUser.id,email:authUser.email,name:profile.name,role:profile.role};
 }
 export async function cloudApi(path, input, method) {
