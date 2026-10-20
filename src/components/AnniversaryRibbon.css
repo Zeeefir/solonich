@@ -139,7 +139,7 @@
     letter-spacing: 0;
   }
   .anniversary-ribbon p,
-  .anniversary-ribbon > span { top: -3px; }
+  .anniversary-ribbon > span { top: 0; }
   .ribbon-message-start,
   .ribbon-message-end { white-space: nowrap; }
   .anniversary-ribbon .ribbon-message-separator { display: none; }
