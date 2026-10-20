@@ -1,5 +1,5 @@
 import useLanguage from '../useLanguage';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { backendEnabled } from '../SiteData';
 
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
@@ -7,6 +7,12 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 export default function Footer() {
   const lang = useLanguage();
   const isRu = lang === 'RU';
+  const { pathname } = useLocation();
+  const handleHomeClick = event => {
+    if (pathname !== '/' || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    window.scrollTo({ top: 0, left: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  };
   return (
     <footer id="contacts" className="site-footer">
       <div className="footer-container">
@@ -55,7 +61,7 @@ export default function Footer() {
         {/* Нижняя полоска с бейджем и копирайтом */}
         <div className="footer-bottom-bar">
           <div className="footer-center-badge">
-            <Link to="/" aria-label={lang === 'EN' ? 'Solonich — Home' : isRu ? 'Солёныч — на главную' : 'Солёныч — басты бетке'}><img className="footer-logo-img" src="/logo.svg?v=original-4" alt="Солёныч" width="110" height="100" loading="lazy" /></Link>
+            <Link to="/" onClick={handleHomeClick} aria-label={lang === 'EN' ? 'Solonich — Home' : isRu ? 'Солёныч — на главную' : 'Солёныч — басты бетке'}><img className="footer-logo-img" src="/logo.svg?v=original-4" alt="Солёныч" width="110" height="100" loading="lazy" /></Link>
           </div>
 
           <div className="footer-right-text">

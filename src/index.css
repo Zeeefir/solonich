@@ -2169,3 +2169,20 @@ button:focus-visible {
   .anniversary-badge::before,
   .anniversary-badge::after { width: 22px; }
 }
+
+/* Give the original logo more presence on laptops and desktop monitors. */
+@media (min-width: 701px) {
+  .logo-img { height: 128px; }
+}
+@media (min-width: 1101px) {
+  .logo-img { height: clamp(144px, 8.5vw, 164px); }
+}
+
+/* A second navigation row prevents collisions on narrow tablets. */
+@media (min-width: 701px) and (max-width: 1000px) {
+  .header-inner { flex-wrap: wrap; }
+  .logo-img { height: 110px; margin-bottom: 0; }
+  .header-right-group { margin-left: auto; }
+  .header-nav { order: 3; flex: 1 0 100%; }
+  section, footer { scroll-margin-top: 190px; }
+}

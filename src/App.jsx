@@ -8,6 +8,7 @@ import ScrollEffects from './components/ScrollEffects';
 import { SiteData } from './SiteData';
 import ProfilePage from './pages/ProfilePage';
 import AdminPage from './pages/AdminPage';
+import NotFoundPage from './pages/NotFoundPage';
 import Seo from './components/Seo';
 
 function ScrollToTop() {
@@ -50,6 +51,7 @@ function App() {
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/admin/new" element={<AdminPage />} />
             <Route path="/setup" element={<Navigate to="/profile" replace />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
         <Footer />

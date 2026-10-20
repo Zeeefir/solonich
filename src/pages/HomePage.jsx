@@ -26,7 +26,11 @@ export default function HomePage() {
       <section className="hero-banner">
         <div className="anniversary-ribbon">
           <span aria-hidden="true">✦</span>
-          <p>{lang === 'EN' ? <>Celebrating <strong>10 years</strong> together</> : isRu ? <>Нам <strong>10 лет</strong> — вместе с вами!</> : <>Бізге <strong>10 жыл</strong> — сіздермен бірге!</>}</p>
+          <p>
+            <span className="ribbon-message-start">{lang === 'EN' ? <>Celebrating <strong>10 years</strong></> : isRu ? <>Нам <strong>10 лет</strong></> : <>Бізге <strong>10 жыл</strong></>}</span>
+            <span className="ribbon-message-separator">{lang === 'EN' ? ' ' : ' — '}</span>
+            <span className="ribbon-message-end">{lang === 'EN' ? 'together' : isRu ? 'вместе с вами!' : 'сіздермен бірге!'}</span>
+          </p>
           <span aria-hidden="true">✦</span>
         </div>
         <div className="hero-center-content">
