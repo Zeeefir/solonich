@@ -2,7 +2,7 @@ import useLanguage from '../useLanguage';
 import { useState } from 'react';
 import { useSiteData } from '../SiteData';
 import ProductCard from '../components/ProductCard';
-import '../components/AnniversaryRibbon.css';
+import AnniversaryRibbon from '../components/AnniversaryRibbon';
 import { Leaf, Award, Apple, Store, ShieldCheck } from 'lucide-react';
 
 export default function HomePage() {
@@ -24,15 +24,7 @@ export default function HomePage() {
     <main className="main-container">
       {/* 1. БАННЕР HERO */}
       <section className="hero-banner">
-        <div className="anniversary-ribbon">
-          <span aria-hidden="true">✦</span>
-          <p>
-            <span className="ribbon-message-start">{lang === 'EN' ? <>Celebrating <strong>10 years</strong></> : isRu ? <>Нам <strong>10 лет</strong></> : <>Бізге <strong>10 жыл</strong></>}</span>
-            <span className="ribbon-message-separator">{lang === 'EN' ? ' ' : ' — '}</span>
-            <span className="ribbon-message-end">{lang === 'EN' ? 'together' : isRu ? 'вместе с вами!' : 'сіздермен бірге!'}</span>
-          </p>
-          <span aria-hidden="true">✦</span>
-        </div>
+        <AnniversaryRibbon lang={lang} />
         <div className="hero-center-content">
           <h1 className="hero-main-title">
             {lang === 'EN' ? <>REVIVING TIME-HONOURED<br />FLAVOURS</> : isRu ? <>ВОЗРОЖДАЯ ЗАБЫТЫЕ<br />ТРАДИЦИИ ВКУСА</> : <>ҰМЫТЫЛҒАН ДӘМ<br />ДӘСТҮРЛЕРІН ЖАҢҒЫРТАМЫЗ</>}
