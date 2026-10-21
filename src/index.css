@@ -2186,3 +2186,7 @@ button:focus-visible {
   .header-nav { order: 3; flex: 1 0 100%; }
   section, footer { scroll-margin-top: 190px; }
 }
+
+/* A softer capsule shape for the active header navigation. */
+.header-nav .pill-bg-indicator,
+.header-nav .nav-item-link { border-radius: 999px; }
