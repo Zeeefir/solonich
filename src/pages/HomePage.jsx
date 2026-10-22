@@ -1,3 +1,4 @@
+import { assetUrl } from '../assetUrl.mjs';
 import useLanguage from '../useLanguage';
 import { useState } from 'react';
 import { useSiteData } from '../SiteData';
@@ -42,7 +43,7 @@ export default function HomePage() {
       {/* 2. КРУГЛАЯ ПЛАШКА С КАПУСТОЙ НА СТЫКЕ */}
       <div className="middle-badge-overlap">
         <div className="farmer-badge-icon">
-          <img src="/cabbage.png" alt={lang === 'EN' ? "Cabbage" : isRu ? "Капуста" : "Қырыққабат"} className="farmer-badge-img" />
+          <img src={assetUrl("/cabbage.png")} alt={lang === 'EN' ? "Cabbage" : isRu ? "Капуста" : "Қырыққабат"} className="farmer-badge-img" />
         </div>
       </div>
 
@@ -74,7 +75,7 @@ export default function HomePage() {
               </div>
 
               <p className="about-intro-text">
-                {lang === 'EN' ? <>Kazakhstan-based <strong>LVR Asia LLP</strong> produces natural salted and fermented vegetables under the <strong>Solonich</strong> brand.</> : isRu ? <>Казахстанская производственно-торговая компания <strong>ТОО «LVR Asia»</strong> под торговой маркой <strong>«Солёныч»</strong> специализируется на производстве натуральной солёно-квашеной продукции.</> : <>Қазақстандық өндірістік-сауда компаниясы <strong>«LVR Asia» ЖШС</strong> <strong>«Солёныч»</strong> сауда маркасымен табиғи тұздалған және ашытылған өнімдер өндіруге маманданған.</>}
+                {lang === 'EN' ? <>Kazakhstan-based <strong>LVR Asia LLP</strong> produces sauerkraut, salted cabbage, pickles and vegetable salads in Almaty under the <strong>Solonich</strong> brand.</> : isRu ? <>Казахстанская производственно-торговая компания <strong>ТОО «LVR Asia»</strong> под торговой маркой <strong>«Солёныч»</strong> производит в Алматы квашеную и солёную капусту, соленья и овощные салаты.</> : <>Қазақстандық өндірістік-сауда компаниясы <strong>«LVR Asia» ЖШС</strong> <strong>«Солёныч»</strong> сауда маркасымен Алматыда ашытылған және тұздалған қырыққабат, тұздалған өнімдер мен көкөніс салаттарын өндіреді.</>}
               </p>
               <p className="about-body-text">
                 {lang === 'EN' ? "We follow time-honoured recipes for salted, fermented and brined vegetables. We use natural preservatives (salt and sugar), carefully selected herbs and spices." : isRu ? "При изготовлении мы строго придерживаемся старинных, исконно традиционных рецептур производства солёных, квашеных и мочёных овощей. Используем исключительно естественные консерванты (соль, сахар), а также отборные природные приправы и специи." : "Өнім дайындауда тұздалған, ашытылған және тұздыққа салынған көкөністердің ежелгі дәстүрлі рецептерін қатаң сақтаймыз. Тек табиғи консерванттарды (тұз, қант), сондай-ақ іріктелген табиғи дәмдеуіштерді пайдаланамыз."}

@@ -1,3 +1,4 @@
+import { assetUrl } from '../assetUrl.mjs';
 import { formatUnit } from '../translations';
 import useLanguage from '../useLanguage';
 import { useParams, Link } from 'react-router-dom';
@@ -85,7 +86,7 @@ export default function ProductPage() {
           
           {product.image ? (
             <img 
-              src={product.image} 
+              src={assetUrl(product.image)}
               alt={lang === 'EN' ? product.titleEn : isRu ? product.title : product.titleKz} 
               style={{ 
                 width: '100%', 

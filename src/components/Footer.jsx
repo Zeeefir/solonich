@@ -1,3 +1,4 @@
+import { assetUrl } from '../assetUrl.mjs';
 import useLanguage from '../useLanguage';
 import { Link, useLocation } from 'react-router-dom';
 import { backendEnabled } from '../SiteData';
@@ -30,6 +31,15 @@ export default function Footer() {
                 <li>
                   <Phone size={18} className="contact-icon" />
                   <a href="tel:+77079903960">+7 (707) 990-39-60</a>
+                  <a
+                    className="footer-whatsapp-link"
+                    href="https://wa.me/77079903960"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={lang === 'EN' ? 'Message us on WhatsApp' : isRu ? 'Написать в WhatsApp' : 'WhatsApp-та жазу'}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+                  </a>
                 </li>
                 <li>
                   <Mail size={18} className="contact-icon" />
@@ -61,7 +71,7 @@ export default function Footer() {
         {/* Нижняя полоска с бейджем и копирайтом */}
         <div className="footer-bottom-bar">
           <div className="footer-center-badge">
-            <Link to="/" onClick={handleHomeClick} aria-label={lang === 'EN' ? 'Solonich — Home' : isRu ? 'Солёныч — на главную' : 'Солёныч — басты бетке'}><img className="footer-logo-img" src="/logo.svg?v=original-4" alt="Солёныч" width="110" height="100" loading="lazy" /></Link>
+            <Link to="/" onClick={handleHomeClick} aria-label={lang === 'EN' ? 'Solonich — Home' : isRu ? 'Солёныч — на главную' : 'Солёныч — басты бетке'}><img className="footer-logo-img" src={assetUrl("/logo.svg?v=original-4")} alt="Солёныч" width="110" height="100" loading="lazy" /></Link>
           </div>
 
           <div className="footer-right-text">

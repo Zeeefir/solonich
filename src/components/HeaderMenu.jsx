@@ -1,3 +1,4 @@
+import { assetUrl } from '../assetUrl.mjs';
 import useLanguage from '../useLanguage';
 import { getActiveSection } from '../activeSection.mjs';
 import { useState, useEffect, useRef } from 'react';
@@ -139,7 +140,7 @@ export default function Header() {
     <header ref={headerRef} className={`site-header${isMenuOpen ? ' is-menu-open' : ''}${isProductPage ? ' is-product-page' : ''}`}>
       <div className="header-inner">
         <a href="/" onClick={handleLogoClick} className="logo-wrapper" aria-label={lang === 'EN' ? "Home" : lang === 'RU' ? 'На главную' : 'Басты бетке'}>
-          <img src="/logo.svg?v=original-4" alt="Солёныч" className="logo-img" />
+          <img src={assetUrl("/logo.svg?v=original-4")} alt="Солёныч" className="logo-img" />
         </a>
 
         {isProductPage ? (

@@ -8,6 +8,8 @@ The user requests storing every newly created credential in the ignored local `d
 
 The brand's Latin spelling is Solonich.
 
+The primary live domain is now https://solenich.kz, hosted as the WordPress theme `solonich-catalog`. Build with `npm run build:wordpress`, zip the generated theme directory and upload/update it in the owner's WordPress dashboard. A GitHub push updates the Vercel preview, not this WordPress host. Keep the previous theme `solenich-anniversary` available for rollback. Public content and catalogue administration still use Supabase; WordPress administration remains at `/wp-admin/`.
+
 The user now wants only owner administration of the online catalog. Public registration, customer profiles, reviews and visitor statistics are cancelled. Keep the confirmed owner's account and product management, with access enforced in Supabase. Do not reactivate cancelled features unless requested.
 
 The user additionally approved a second catalog administrator, 3kuku66qq@gmail.com. Catalog access is restricted to the two approved confirmed accounts by Supabase migration 004. Public signup remains disabled.

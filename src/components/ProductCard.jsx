@@ -1,3 +1,4 @@
+import { assetUrl } from '../assetUrl.mjs';
 import useLanguage from '../useLanguage';
 import { Link } from 'react-router-dom';
 
@@ -36,7 +37,7 @@ export default function ProductCard({ product }) {
         <div className="card-image-wrapper">
           {product.image ? (
             <img 
-              src={product.image} 
+              src={assetUrl(product.image)}
               alt={lang === 'EN' ? product.titleEn : isRu ? product.title : product.titleKz} 
               className="product-card-img" 
               loading="lazy"

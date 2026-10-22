@@ -1169,6 +1169,28 @@ section, footer {
   opacity: 0.9;
 }
 
+.contacts-list .footer-whatsapp-link {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .contacts-list .footer-whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    min-height: 44px;
+    flex: 0 0 44px;
+    border-radius: 50%;
+    background: #1dce5a;
+  }
+
+  .footer-whatsapp-link:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+}
+
 .footer-map-box {
   width: 100%;
   max-width: 600px;

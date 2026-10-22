@@ -7,6 +7,7 @@
     "server": "node server/index.mjs",
     "dev": "vite",
     "build": "vite build && node scripts/build-seo.mjs",
+    "build:wordpress": "node scripts/build-wordpress.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
